@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
  */
+
+h3.feature {
+  line-height: 30px;
+}

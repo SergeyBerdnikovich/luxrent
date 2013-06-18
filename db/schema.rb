@@ -11,6 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130618190048) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.boolean  "separately"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "categories_services", :force => true do |t|
+    t.integer "category_id"
+    t.integer "service_id"
+  end
+
+  add_index "categories_services", ["category_id"], :name => "index_categories_services_on_category_id"
+  add_index "categories_services", ["service_id"], :name => "index_categories_services_on_service_id"
+
+  create_table "services", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
 end
