@@ -61,6 +61,21 @@ module Luxrent
 
     # Enable the asset pipeline
     config.assets.enabled = true
+    config.assets.precompile += %w( crossroads.min.js
+                                    googlemaps.js
+                                    hasher.min.js
+                                    jquery.flexslider-min.js
+                                    jquery.min.js
+                                    jquery.vegas.js
+                                    signals.min.js
+                                    theme.js
+                                    bootstrap.min.js
+                                    bootstrap.min.css
+                                    flexslider.css
+                                    font-awesome.min.css
+                                    jquery.vegas.css
+                                    style.min.css
+                                   )
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
