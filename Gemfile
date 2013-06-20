@@ -8,6 +8,9 @@ gem 'rails', '3.2.13'
 gem 'sqlite3'
 
 gem "paperclip"
+gem 'devise'
+gem 'activeadmin'
+gem "ckeditor"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,7 +25,7 @@ group :assets do
 end
 gem 'sass-rails',   '~> 3.2.3'
 
-gem 'jquery-rails'
+gem "jquery-rails", "2.3.0"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
