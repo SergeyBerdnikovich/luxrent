@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130618195810) do
+ActiveRecord::Schema.define(:version => 20130620142135) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
@@ -28,6 +28,18 @@ ActiveRecord::Schema.define(:version => 20130618195810) do
 
   add_index "categories_services", ["category_id"], :name => "index_categories_services_on_category_id"
   add_index "categories_services", ["service_id"], :name => "index_categories_services_on_service_id"
+
+  create_table "galleries", :force => true do |t|
+    t.boolean  "for_big_slider"
+    t.boolean  "for_small_slider"
+    t.integer  "service_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
 
   create_table "phrases", :force => true do |t|
     t.string   "title"
