@@ -17,7 +17,7 @@ $(function() {
 	var infowindow = new google.maps.InfoWindow({
 		content: contentString
 	});
-	
+
 	var companyImage = new google.maps.MarkerImage('http://maps.google.com/mapfiles/marker_orange.png',
 		new google.maps.Size(20,34),
 		new google.maps.Point(0,0),

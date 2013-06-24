@@ -9,9 +9,17 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require galleries/custom
+ *= require galleries/icons
+ *= require galleries/prettyPhoto
+ *= require galleries/skindefault
  *= require_tree .
  */
 
 h3.feature {
   line-height: 30px;
+}
+#block2_description {
+  margin: 15px 5px;
+  padding: 20px;
 }

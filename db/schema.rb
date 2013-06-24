@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130620143015) do
+ActiveRecord::Schema.define(:version => 20130621063055) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -66,12 +66,10 @@ ActiveRecord::Schema.define(:version => 20130620143015) do
     t.boolean  "for_big_slider"
     t.boolean  "for_small_slider"
     t.integer  "service_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "category_id"
+    t.string   "photo"
   end
 
   create_table "phrases", :force => true do |t|

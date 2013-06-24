@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   def welcome
-    @caregories = Category.all
+    @categories = Category.all
     @phrases = Phrase.all
+    @services = Service.all
+    @galleries = Gallery.all(:order => "RANDOM()")
   end
 end

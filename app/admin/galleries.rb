@@ -6,9 +6,9 @@ ActiveAdmin.register Gallery do
     end
     column :for_big_slider
     column :for_small_slider
+    column :category
     column :service
-    column :photo_file_name
-    column :photo_file_size
+    column :photo
     column :created_at
     column :updated_at
 
@@ -16,6 +16,9 @@ ActiveAdmin.register Gallery do
   end
 
   form do |f|
+    f.inputs "Category" do
+      f.input :category
+    end
     f.inputs "Service" do
       f.input :service
     end
@@ -34,10 +37,9 @@ ActiveAdmin.register Gallery do
       row :service
       row :for_big_slider
       row :for_small_slider
+      row :category
       row :service
-      row :photo_file_name
-      row :photo_content_type
-      row :photo_file_size
+      row :photo
       row :created_at
       row :updated_at
       row :photo do
@@ -45,5 +47,32 @@ ActiveAdmin.register Gallery do
       end
     end
     active_admin_comments
+  end
+
+  controller do
+    def create
+      @gallery = Gallery.new(params[:gallery])
+      if @gallery.save
+        if params[:gallery][:photo].present?
+          render :crop
+        else
+          redirect_to admin_gallery_path(@gallery), :notice => "Succcessfully created gallery."
+        end
+      else
+        render :new
+      end
+    end
+    def update
+      @gallery = Gallery.find(params[:id])
+      if @gallery.update_attributes(params[:gallery])
+        if params[:gallery][:photo].present?
+          render :crop
+        else
+          redirect_to admin_gallery_path(@gallery), :notice => "Succcessfully updated gallery."
+        end
+      else
+        render :edit
+      end
+    end
   end
 end

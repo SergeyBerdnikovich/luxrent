@@ -1,18 +1,18 @@
 class Gallery < ActiveRecord::Base
   belongs_to :service
+  belongs_to :category
 
-  has_attached_file :photo,
-                    :styles => { :small => "60x60>",
-                                 :block1 => "250x200>",
-                                 :block2 => "330x250>",
-                                 :normal => "700x700>" },
-                    :url  => "/images/gallery/:id/:style/:basename.:extension",
-                    :path => ":rails_root/public/images/gallery/:id/:style/:basename.:extension"
+  mount_uploader :photo, PhotoUploader
 
-  validates_attachment_presence :photo
-  validates_attachment_size :photo, :less_than => 2.megabytes
-  validates_attachment_content_type :photo,
-                                    :content_type => ['image/jpg', 'image/jpeg', 'image/gif', 'image/png']
+  attr_accessible :for_big_slider, :for_small_slider, :category_id, :service_id, :photo, :crop_x, :crop_y, :crop_w, :crop_h
+  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 
-  attr_accessible :for_big_slider, :for_small_slider, :service_id, :photo
+  scope :for_background, where(:for_big_slider => true)
+  scope :for_slider, where(:for_small_slider => true)
+
+  after_update :crop_photo
+
+  def crop_photo
+    photo.recreate_versions! if crop_x.present?
+  end
 end
