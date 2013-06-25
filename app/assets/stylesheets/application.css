@@ -12,7 +12,6 @@
  *= require galleries/custom
  *= require galleries/icons
  *= require galleries/prettyPhoto
- *= require galleries/skindefault
  *= require_tree .
  */
 

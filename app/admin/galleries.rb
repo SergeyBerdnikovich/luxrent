@@ -26,6 +26,8 @@ ActiveAdmin.register Gallery do
       f.input :photo, :as => :file, :hint => f.template.image_tag(f.object.photo.url(:normal))
       f.input :for_big_slider
       f.input :for_small_slider
+      f.input :title
+      f.input :description
     end
 
     f.actions
@@ -39,6 +41,8 @@ ActiveAdmin.register Gallery do
       row :for_small_slider
       row :category
       row :service
+      row :title
+      row :description
       row :photo
       row :created_at
       row :updated_at

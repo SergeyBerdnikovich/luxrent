@@ -4,7 +4,8 @@ class Gallery < ActiveRecord::Base
 
   mount_uploader :photo, PhotoUploader
 
-  attr_accessible :for_big_slider, :for_small_slider, :category_id, :service_id, :photo, :crop_x, :crop_y, :crop_w, :crop_h
+  attr_accessible :for_big_slider, :for_small_slider, :category_id, :service_id, :photo,
+                  :crop_x, :crop_y, :crop_w, :crop_h, :title, :description
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 
   scope :for_background, where(:for_big_slider => true)

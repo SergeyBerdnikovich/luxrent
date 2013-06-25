@@ -19,8 +19,6 @@
         <script type="text/javascript" src="/assets/crossroads.min.js"></script>
         <script type="text/javascript" src="/assets/hasher.min.js"></script>
 
-
-        <script type="text/javascript" src="/assets/galleries/common.js"></script>
         <script type="text/javascript" src="/assets/galleries/jquery.isotope.min.js"></script>
         <script type="text/javascript" src="/assets/galleries/jquery.prettyPhoto.js"></script>
         <script type="text/javascript" src="/assets/galleries/twitter-bootstrap-hover-dropdown.js"></script>
@@ -60,8 +58,10 @@
                             <div class="nav-collapse collapse">
                                 <ul class="nav pull-right" id="navigation">
                                     <li><a data-nav="scroll" href="#/home" class="active">HOME</a></li>
-                                    <li><a data-nav="scroll" href="#/features">FEATURES</a></li>
-                                    <li><a data-nav="scroll" href="#/portfolio">PORTFOLIO</a></li>
+                                    <li><a data-nav="scroll" href="#/block1">FEATURES</a></li>
+                                    <li><a data-nav="scroll" href="#/block2">SERVICES</a></li>
+                                    <li><a data-nav="scroll" href="#/block3">LUXOR</a></li>
+                                    <li><a data-nav="scroll" href="#/galleries">Galleries</a></li>
                                     <li><a data-nav="scroll" href="#/contact">CONTACT</a></li>
                                 </ul>
                             </div>
@@ -87,7 +87,7 @@
         </div>
     </section>
     <!-- features -->
-    <section id="features" class="box">
+    <section id="block1" class="box">
         <div class="container">
             <div class="panel">
                 <div class="row-fluid">
@@ -132,7 +132,7 @@
         </div>
     </section>
     <!-- portfolio -->
-    <section id="portfolio" class="box">
+    <section id="block2" class="box">
         <div class="container">
             <div class="panel">
                 <div class="row-fluid">
@@ -146,36 +146,36 @@
                 <div class="row-fluid">
                     <div class="span12 content">
                         <% @services.each do |service| %>
-                        <% if service.categories.where(:separately => true).blank? %>
-                        <ul class="portfolio">
-                            <li class="span4">
-                                <div class="item">
-                                    <a href="<%= service.image(0) %>" class="lightbox_trigger">
-                                      <%= image_tag service.image(0, :block2) %>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="span4">
-                                <div class="item">
-                                    <a href="<%= service.image(1) %>" class="lightbox_trigger">
-                                      <%= image_tag service.image(1, :block2) %>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="span4">
-                                <div class="item">
-                                    <a href="<%= service.image(2) %>" class="lightbox_trigger">
-                                      <%= image_tag service.image(2, :block2) %>
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                        <div clas='clear'></div>
-                        <div id='block2_description'>
-                          <h3 style='margin-top:20px;'><%= service.title %></h3>
-                          <p><%= service.description %></p>
-                        </div>
-                        <% end %>
+                            <% if service.categories.where(:separately => true).blank? %>
+                            <ul class="portfolio">
+                                <li class="span4">
+                                    <div class="item">
+                                        <a href="<%= service.image(0) %>" class="lightbox_trigger">
+                                          <%= image_tag service.image(0, :block2) %>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="span4">
+                                    <div class="item">
+                                        <a href="<%= service.image(1) %>" class="lightbox_trigger">
+                                          <%= image_tag service.image(1, :block2) %>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="span4">
+                                    <div class="item">
+                                        <a href="<%= service.image(2) %>" class="lightbox_trigger">
+                                          <%= image_tag service.image(2, :block2) %>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div clas='clear'></div>
+                            <div id='block2_description'>
+                              <h3 style='margin-top:20px;'><%= service.title %></h3>
+                              <p><%= service.description %></p>
+                            </div>
+                            <% end %>
                         <% end %>
                     </div>
                 </div>
@@ -183,7 +183,7 @@
         </div>
     </section>
     <% Category.where(:separately => true).each do |category| %>
-      <section id="portfolio" class="box">
+      <section id="block3" class="box">
         <div class="container">
             <div class="panel">
                 <div class="row-fluid">
@@ -233,7 +233,7 @@
         </div>
       </section>
     <% end %>
-    <section id="portfolio" class="box">
+    <section id="galleries" class="box">
         <div class="container">
             <div class="panel">
                 <div class="row-fluid">
@@ -247,8 +247,6 @@
                 <div class="row-fluid">
                     <div class="span12 content" style='padding:16px;'>
                         <div class="container">
-                            <!-- Filtering Menu
-                            ================================================== -->
                             <div class="row-fluid">
                                 <div class="span12 text-center">
                                     <div id="filter">
@@ -261,29 +259,24 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- END filtering menu -->
-                            <!-- MASONRY ITEMS START
-                            ================================================== -->
                             <div id="content">
                                 <% @galleries.each do |gallery| %>
-                                <div class="boxportfolio4<%= set_categories_for_(gallery) %> ">
-                                    <div class="boxcontainer">
-                                        <img src="<%= gallery.photo_url %>" alt="">
-                                        <div class="roll">
-                                            <div class="wrapcaption">
-                                                <a href="singleproject.html"><i class="icon-link captionicons"></i></a>
-                                                <a data-gal="prettyPhoto[gallery1]" href="<%= gallery.photo_url %>" title="La Chaux De Fonds"><i class="icon-zoom-in captionicons"></i></a>
+                                    <div class="boxportfolio4<%= set_categories_for_(gallery) %> ">
+                                        <div class="boxcontainer">
+                                            <img src="<%= gallery.photo_url %>" alt="">
+                                            <div class="roll" style="<%= gallery.title.present? && gallery.description.present? ? 'top:-80px' : 'top:0px' %>">
+                                                <div class="wrapcaption" style="<%= gallery.title.present? && gallery.description.present? ? 'top:55%' : 'top:40%' %>">
+                                                    <a data-gal="prettyPhoto[gallery1]" href="<%= gallery.photo_url %>" title="<%= gallery.title %>"><i class="icon-zoom-in captionicons"></i></a>
+                                                </div>
                                             </div>
+                                            <% if gallery.title.present? && gallery.description.present? %>
+                                                <h1><a href="singleproject.html"><%= gallery.title[0..25] %></a></h1>
+                                                <p><%= gallery.description[0..25] %></p>
+                                            <% end %>
                                         </div>
-                                        <h1><a href="singleproject.html">La Chaux De Fonds</a></h1>
-                                        <p>
-                                             Swiss city in Jura mountains
-                                        </p>
                                     </div>
-                                </div>
                                 <% end %>
                             </div>
-                        <!-- MASONRY ITEMS END -->
                         </div>
                     </div>
                 </div>
