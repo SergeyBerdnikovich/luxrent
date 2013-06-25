@@ -8,7 +8,7 @@ ActiveAdmin.register Gallery do
     column :for_small_slider
     column :category
     column :service
-    column :photo
+    column :title
     column :created_at
     column :updated_at
 

@@ -1,335 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <head>
-
-        <title>EMBER - by Superthe.me</title>
-        <meta charset="utf-8" />
-        <%= stylesheet_link_tag    "application", :media => "all" %>
-        <%#= javascript_include_tag "application" %>
-        <%= javascript_include_tag "jquery.min" %>
-        <%= javascript_include_tag "theme" %>
-        <%= javascript_include_tag "jquery.vegas" %>
-        <%= javascript_include_tag "bootstrap.min" %>
-        <%= javascript_include_tag "jquery.flexslider-min" %>
-        <%#= javascript_include_tag "crossroads.min" %>
-        <%= javascript_include_tag "signals.min" %>
-        <%#= javascript_include_tag "hasher.min" %>
-        <%#= javascript_include_tag "googlemaps" %>
-        <script type="text/javascript" src="/assets/crossroads.min.js"></script>
-        <script type="text/javascript" src="/assets/hasher.min.js"></script>
-
-        <script type="text/javascript" src="/assets/galleries/jquery.isotope.min.js"></script>
-        <script type="text/javascript" src="/assets/galleries/jquery.prettyPhoto.js"></script>
-        <script type="text/javascript" src="/assets/galleries/twitter-bootstrap-hover-dropdown.js"></script>
-        <%#= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false" %>
-        <%= csrf_meta_tags %>
-        <!--[if IE 7]>
+  <head>
+    <title>LUXRENT</title>
+      <meta charset="utf-8" />
+      <%= stylesheet_link_tag    "application", :media => "all" %>
+      <%#= javascript_include_tag "application" %>
+      <%= javascript_include_tag "jquery.min" %>
+      <%= javascript_include_tag "theme" %>
+      <%= javascript_include_tag "jquery.vegas" %>
+      <%= javascript_include_tag "bootstrap.min" %>
+      <%= javascript_include_tag "jquery.flexslider-min" %>
+      <%#= javascript_include_tag "crossroads.min" %>
+      <%= javascript_include_tag "signals.min" %>
+      <%#= javascript_include_tag "hasher.min" %>
+      <%#= javascript_include_tag "googlemaps" %>
+      <script type="text/javascript" src="/assets/crossroads.min.js"></script>
+      <script type="text/javascript" src="/assets/hasher.min.js"></script>
+      <script type="text/javascript" src="/assets/galleries/jquery.isotope.min.js"></script>
+      <script type="text/javascript" src="/assets/galleries/jquery.prettyPhoto.js"></script>
+      <script type="text/javascript" src="/assets/galleries/twitter-bootstrap-hover-dropdown.js"></script>
+      <%#= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false" %>
+      <%= csrf_meta_tags %>
+      <!--[if IE 7]>
         <link href="css/font-awesome-ie7.css" rel="stylesheet">
-        <![endif]-->
+      <![endif]-->
 
-        <!--[if lt IE 9]>
+      <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-
-        <!--[if gte IE 9]>
-        <style type="text/css">
-        </style>
-        <![endif]-->
-
-    </head>
-<body>
+      <![endif]-->
+  </head>
+  <body>
     <a id="back-top" href="javascript:void(0)"><i class="icon-chevron-up"></i></a>
     <!-- header -->
     <header id="header">
-        <div class="container">
-            <div class="row-fluid">
-                <div class="span12">
-                    <div class="navbar">
-                        <div class="navbar-inner">
-                            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </a>
-                            <a class="brand" href="javascript:void(0)">
-                                <h1 id="logo">LUXRENT</h1>
-                            </a>
-                            <div class="nav-collapse collapse">
-                                <ul class="nav pull-right" id="navigation">
-                                    <li><a data-nav="scroll" href="#/home" class="active">HOME</a></li>
-                                    <li><a data-nav="scroll" href="#/block1">FEATURES</a></li>
-                                    <li><a data-nav="scroll" href="#/block2">SERVICES</a></li>
-                                    <li><a data-nav="scroll" href="#/block3">LUXOR</a></li>
-                                    <li><a data-nav="scroll" href="#/galleries">Galleries</a></li>
-                                    <li><a data-nav="scroll" href="#/contact">CONTACT</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+      <div class="container">
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="javascript:void(0)"><h1 id="logo">LUXRENT</h1></a>
+                <div class="nav-collapse collapse">
+                  <ul class="nav pull-right" id="navigation">
+                    <li><a data-nav="scroll" href="#/home" class="active">HOME</a></li>
+                    <li><a data-nav="scroll" href="#/block1">ABOUT US</a></li>
+                    <li><a data-nav="scroll" href="#/block2">SERVICES</a></li>
+                    <li><a data-nav="scroll" href="#/block3">LUXOR</a></li>
+                    <li><a data-nav="scroll" href="#/galleries">GALLERIES</a></li>
+                    <li><a data-nav="scroll" href="#/contact">CONTACT</a></li>
+                  </ul>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </header>
     <!-- home -->
     <section id="home" class="box">
-        <div class="container">
-            <div class="panel">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <hgroup id="intro" style="display: none">
-                            <h2>Ember is Good for You</h2>
-                            <h3>Lorem ipsum dolor sit amet</h3>
-                        </hgroup>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="panel">
+          <div class="row-fluid">
+            <div class="span12">
+              <hgroup id="intro" style="display: none">
+                <h2>Ember is Good for You</h2>
+                <h3>Lorem ipsum dolor sit amet</h3>
+              </hgroup>
             </div>
+          </div>
         </div>
+      </div>
     </section>
     <!-- features -->
     <section id="block1" class="box">
-        <div class="container">
-            <div class="panel">
-                <div class="row-fluid">
-                    <div class="span12 header">
-                        <hgroup>
-                            <h2>Features</h2>
-                            <h3>Lorem ipsum dolor site amet</h3>
-                        </hgroup>
-                    </div>
-                </div>
-                <div class="row-fluid">
-                    <div class="span12 content">
-                        <div class="row-fluid">
-                            <div class="span12 pull-center">
-                                <img src="/assets/Responsive-showcase-presentation.jpg" alt="" />
-                            </div>
-                        </div>
-                        <hr class="line" />
-                        <div class="flexslider">
-                            <ul class="slides">
-                                <% @phrases.each do |phrase| %>
-                                <li>
-                                    <p class="quote">“<%= phrase.description %>”</p>
-                                    <p class="customer"><%= phrase.title %></p>
-                                </li>
-                              <% end %>
-                            </ul>
-                        </div>
-                        <hr class="line" />
-                        <ul class="row-fluid">
-                          <% @categories.each_with_index do |category, i| %>
-                            <li class="span3" style='min-height:400px;margin-left:0; margin-right:1.55%;'>
-                              <%= image_tag category.galleries.first.photo.url(:block1) %>
-                              <h3 class="feature" style='line-height:30px;min-height:50px;'><%= category.title %></h3>
-                              <p><%= category.description %></p>
-                            </li>
-                          <% end %>
-                        </ul>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="panel">
+          <div class="row-fluid">
+            <div class="span12 header">
+              <hgroup>
+                <h2>Features</h2>
+                <h3>Lorem ipsum dolor site amet</h3>
+              </hgroup>
             </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span12 content">
+              <div class="row-fluid">
+                <div class="span12 pull-center">
+                  <img src="/assets/Responsive-showcase-presentation.jpg" alt="" />
+                </div>
+              </div>
+              <hr class="line" />
+              <div class="flexslider">
+                <ul class="slides">
+                  <% @phrases.each do |phrase| %>
+                    <li>
+                      <p class="quote">“<%= phrase.description %>”</p>
+                      <p class="customer"><%= phrase.title %></p>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+              <hr class="line" />
+              <ul class="row-fluid">
+                <% @categories.each_with_index do |category, i| %>
+                  <li class="span3" style='min-height:400px;margin-left:0; margin-right:1.55%;'>
+                    <%= image_tag category.galleries.first.photo.url(:block1) %>
+                    <h3 class="feature" style='line-height:30px;min-height:50px;'><%= category.title %></h3>
+                    <p><%= category.description %></p>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
     <!-- portfolio -->
     <section id="block2" class="box">
-        <div class="container">
-            <div class="panel">
-                <div class="row-fluid">
-                    <div class="span12 header">
-                        <hgroup>
-                            <h2>Portfolio</h2>
-                            <h3>Lorem ipsum dolor site amet</h3>
-                        </hgroup>
-                    </div>
-                </div>
-                <div class="row-fluid">
-                    <div class="span12 content">
-                        <% @services.each do |service| %>
-                            <% if service.categories.where(:separately => true).blank? %>
-                            <ul class="portfolio">
-                                <li class="span4">
-                                    <div class="item">
-                                        <a href="<%= service.image(0) %>" class="lightbox_trigger">
-                                          <%= image_tag service.image(0, :block2) %>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li class="span4">
-                                    <div class="item">
-                                        <a href="<%= service.image(1) %>" class="lightbox_trigger">
-                                          <%= image_tag service.image(1, :block2) %>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li class="span4">
-                                    <div class="item">
-                                        <a href="<%= service.image(2) %>" class="lightbox_trigger">
-                                          <%= image_tag service.image(2, :block2) %>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div clas='clear'></div>
-                            <div id='block2_description'>
-                              <h3 style='margin-top:20px;'><%= service.title %></h3>
-                              <p><%= service.description %></p>
-                            </div>
-                            <% end %>
-                        <% end %>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="panel">
+          <div class="row-fluid">
+            <div class="span12 header">
+              <hgroup>
+                <h2>Portfolio</h2>
+                <h3>Lorem ipsum dolor site amet</h3>
+              </hgroup>
             </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span12 content">
+              <% @services.each do |service| %>
+                <% if service.categories.where(:separately => true).blank? %>
+                  <ul class="portfolio">
+                    <li class="span4">
+                      <div class="item">
+                        <a href="<%= service.image(0) %>" class="lightbox_trigger">
+                          <%= image_tag service.image(0, :block2) %>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="span4">
+                      <div class="item">
+                        <a href="<%= service.image(1) %>" class="lightbox_trigger">
+                          <%= image_tag service.image(1, :block2) %>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="span4">
+                      <div class="item">
+                        <a href="<%= service.image(2) %>" class="lightbox_trigger">
+                          <%= image_tag service.image(2, :block2) %>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                  <div id='block2_description'>
+                    <h3><%= service.title %></h3>
+                    <p><%= service.description %></p>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
     <% Category.where(:separately => true).each do |category| %>
       <section id="block3" class="box">
         <div class="container">
-            <div class="panel">
-                <div class="row-fluid">
-                    <div class="span12 header">
-                        <hgroup>
-                            <h2>Portfolio</h2>
-                            <h3>Lorem ipsum dolor site amet</h3>
-                        </hgroup>
-                    </div>
-                </div>
-                <div class="row-fluid">
-                    <div class="span12 content">
-                        <% category.services.each do |service| %>
-                        <ul class="portfolio">
-                            <li class="span4">
-                                <div class="item">
-                                    <a href="<%= service.image(0) %>" class="lightbox_trigger">
-                                      <%= image_tag service.image(0, :block2) %>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="span4">
-                                <div class="item">
-                                    <a href="<%= service.image(1) %>" class="lightbox_trigger">
-                                      <%= image_tag service.image(1, :block2) %>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="span4">
-                                <div class="item">
-                                    <a href="<%= service.image(2) %>" class="lightbox_trigger">
-                                      <%= image_tag service.image(2, :block2) %>
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                        <div clas='clear'></div>
-                        <div id='block2_description'>
-                          <h3 style='margin-top:20px;'><%= service.title %></h3>
-                          <p><%= service.description %></p>
-                        </div>
-
-                        <% end %>
-                    </div>
-                </div>
+          <div class="panel">
+            <div class="row-fluid">
+              <div class="span12 header">
+                <hgroup>
+                  <h2>Portfolio</h2>
+                  <h3>Lorem ipsum dolor site amet</h3>
+                </hgroup>
+              </div>
             </div>
+            <div class="row-fluid">
+              <div class="span12 content">
+                <% category.services.each do |service| %>
+                  <ul class="portfolio">
+                    <li class="span4">
+                      <div class="item">
+                        <a href="<%= service.image(0) %>" class="lightbox_trigger">
+                          <%= image_tag service.image(0, :block2) %>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="span4">
+                      <div class="item">
+                        <a href="<%= service.image(1) %>" class="lightbox_trigger">
+                          <%= image_tag service.image(1, :block2) %>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="span4">
+                      <div class="item">
+                        <a href="<%= service.image(2) %>" class="lightbox_trigger">
+                          <%= image_tag service.image(2, :block2) %>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                  <div clas='clear'></div>
+                  <div id='block3_description'>
+                    <h3><%= service.title %></h3>
+                    <p><%= service.description %></p>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     <% end %>
     <section id="galleries" class="box">
-        <div class="container">
-            <div class="panel">
-                <div class="row-fluid">
-                    <div class="span12 header">
-                        <hgroup>
-                            <h2>Galleries</h2>
-                            <h3>Lorem ipsum dolor site amet</h3>
-                        </hgroup>
-                    </div>
-                </div>
-                <div class="row-fluid">
-                    <div class="span12 content" style='padding:16px;'>
-                        <div class="container">
-                            <div class="row-fluid">
-                                <div class="span12 text-center">
-                                    <div id="filter">
-                                        <ul>
-                                            <li><a href="" data-filter="*" class="selected"><i class="icon icon-reorder"></i> All Photos</a></li>
-                                            <% @categories.each_with_index do |category, i| %>
-                                              <li><a href="" data-filter=<%= ".cat_#{category.id}" %> ><i class="icon icon-reorder"></i> <%= category.title %></a></li>
-                                            <% end %>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="content">
-                                <% @galleries.each do |gallery| %>
-                                    <div class="boxportfolio4<%= set_categories_for_(gallery) %> ">
-                                        <div class="boxcontainer">
-                                            <img src="<%= gallery.photo_url %>" alt="">
-                                            <div class="roll" style="<%= gallery.title.present? && gallery.description.present? ? 'top:-80px' : 'top:0px' %>">
-                                                <div class="wrapcaption" style="<%= gallery.title.present? && gallery.description.present? ? 'top:55%' : 'top:40%' %>">
-                                                    <a data-gal="prettyPhoto[gallery1]" href="<%= gallery.photo_url %>" title="<%= gallery.title %>"><i class="icon-zoom-in captionicons"></i></a>
-                                                </div>
-                                            </div>
-                                            <% if gallery.title.present? && gallery.description.present? %>
-                                                <h1><a href="singleproject.html"><%= gallery.title[0..25] %></a></h1>
-                                                <p><%= gallery.description[0..25] %></p>
-                                            <% end %>
-                                        </div>
-                                    </div>
-                                <% end %>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="panel">
+          <div class="row-fluid">
+            <div class="span12 header">
+              <hgroup>
+                <h2>Galleries</h2>
+                <h3>Lorem ipsum dolor site amet</h3>
+              </hgroup>
             </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span12 content" style='padding:16px;'>
+              <div class="container">
+                <div class="row-fluid">
+                  <div class="span12 text-center">
+                    <div id="filter">
+                      <ul>
+                        <li><a href="" data-filter="*" class="selected"><i class="icon icon-reorder"></i> All Photos</a></li>
+                        <% @categories.each_with_index do |category, i| %>
+                          <li><a href="" data-filter=<%= ".cat_#{category.id}" %> ><i class="icon icon-reorder"></i> <%= category.title %></a></li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div id="content">
+                  <% @galleries.each do |gallery| %>
+                    <div class="boxportfolio4<%= set_categories_for_(gallery) %> ">
+                      <div class="boxcontainer">
+                        <img src="<%= gallery.photo_url %>" alt="">
+                        <div class="roll" style="<%= gallery.title.present? && gallery.description.present? ? 'top:-80px' : 'top:0px' %>">
+                          <div class="wrapcaption" style="<%= gallery.title.present? && gallery.description.present? ? 'top:55%' : 'top:40%' %>">
+                            <a data-gal="prettyPhoto[gallery1]" href="<%= gallery.photo_url %>" title="<%= gallery.title %>">
+                                <i class="icon-zoom-in captionicons"></i>
+                            </a>
+                          </div>
+                        </div>
+                        <% if gallery.title.present? && gallery.description.present? %>
+                          <h1><a href="singleproject.html"><%= gallery.title[0..25] %></a></h1>
+                          <p><%= gallery.description[0..25] %></p>
+                        <% end %>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
     <!-- contact -->
     <section id="contact" class="box">
-        <div class="container">
-            <div class="panel">
-                <div class="row-fluid">
-                    <div class="span12 header">
-                        <hgroup>
-                            <h2>Contact</h2>
-                            <h3>Lorem ipsum dolor site amet</h3>
-                        </hgroup>
-                    </div>
-                </div>
-                <div class="row-fluid">
-                    <div class="span12 content">
-                        <div class="row-fluid">
-                            <div class="span6">
-                                <!-- googlemaps -->
-                                <div id="map_canvas"></div>
-                            </div>
-                            <div class="span6">
-                                <form>
-                                    <fieldset>
-                                        <div class="control-group">
-                                            <div class="controls">
-                                                <input class="span12" type="text" placeholder="Your Full Name">
-                                            </div>
-                                            <div class="controls">
-                                                <input class="span12" type="text" placeholder="Your Email">
-                                            </div>
-                                            <div class="controls">
-                                                <input class="span12" type="text" placeholder="Message Subject">
-                                            </div>
-                                            <div class="controls">
-                                                <textarea class="span12" id="textarea" rows="6" placeholder="Your Message"></textarea>
-                                            </div>
-                                            <button class="btn btn-default">Send Message</button>
-                                        </div>
-                                    </fieldset>
-                                </form>
-                            </div>
-                        </div>
-                </div>
+      <div class="container">
+        <div class="panel">
+          <div class="row-fluid">
+            <div class="span12 header">
+              <hgroup>
+                <h2>Contact</h2>
+                <h3>Lorem ipsum dolor site amet</h3>
+              </hgroup>
             </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span12 content">
+              <div class="row-fluid">
+                <div class="span6">
+                <!-- googlemaps -->
+                  <div id="map_canvas"></div>
+                </div>
+                <div class="span6">
+                  <form>
+                    <fieldset>
+                      <div class="control-group">
+                        <div class="controls">
+                          <input class="span12" type="text" placeholder="Your Full Name">
+                        </div>
+                        <div class="controls">
+                          <input class="span12" type="text" placeholder="Your Email">
+                        </div>
+                        <div class="controls">
+                          <input class="span12" type="text" placeholder="Message Subject">
+                        </div>
+                        <div class="controls">
+                          <textarea class="span12" id="textarea" rows="6" placeholder="Your Message"></textarea>
+                        </div>
+                        <button class="btn btn-default">Send Message</button>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-
     <!-- ligthbox -->
     <div style="display: none;" id="lightbox"><img id="bigimg" src="" /></div>
-</body>
+  </body>
 </html>
