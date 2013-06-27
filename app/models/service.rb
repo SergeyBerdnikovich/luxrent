@@ -2,6 +2,7 @@ class Service < ActiveRecord::Base
   attr_accessible :description, :title
   has_and_belongs_to_many :categories
   has_many :galleries
+  has_many :prices
 
   def image(i, size = :original)
     if self.galleries[i]

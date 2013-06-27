@@ -20,5 +20,51 @@ h3.feature {
 }
 #block2_description {
   margin: 15px 5px;
-  /*padding: 20px;*/
+}
+.hide_data {
+  display: none;
+}
+.lux_btn2 {
+  border: 1px solid #FFFFFF;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  background: white;
+  /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);*/
+  border-radius: 4px 4px 4px 4px;
+  background: none repeat scroll 0 0 #434343 !important;
+  color: #F5F508;
+}
+.lux_btn2:hover {
+  /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.1) inset;*/
+  background: none repeat scroll 0 0 #BD503E !important;
+  transition: all 300ms ease-in 0s;
+  text-decoration: none;
+  color: white;
+}
+.lux_btn2:focus {
+  outline: none;
+  text-decoration: none;
+  color: #F5F508;
+}
+.lux_btn {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DFDFDF;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1) inset;
+    color: #424242 !important;
+    font-size: 0.9em;
+    padding: 6px 11px;
+    transition: all 400ms ease-out 0s;
+}
+.lux_btn:hover {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #D2D1D1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    color: #424242 !important;
+    font-size: 0.9em;
+    padding: 6px 11px;
+    transition: all 400ms ease-out 0s;
+}
+.lux_btn:focus {
+  outline: none;
+  text-decoration: none;
 }

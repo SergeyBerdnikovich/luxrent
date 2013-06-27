@@ -48,7 +48,7 @@
                   <ul class="nav pull-right" id="navigation">
                     <li><a data-nav="scroll" href="#/home" class="active">HOME</a></li>
                     <li><a data-nav="scroll" href="#/block1">ABOUT US</a></li>
-                    <li><a data-nav="scroll" href="#/block2">SERVICES</a></li>
+                    <li><a data-nav="scroll" href="#/block2">AVTO</a></li>
                     <li><a data-nav="scroll" href="#/block3">LUXOR</a></li>
                     <li><a data-nav="scroll" href="#/galleries">GALLERIES</a></li>
                     <li><a data-nav="scroll" href="#/contact">CONTACT</a></li>
@@ -108,8 +108,15 @@
               <hr class="line" />
               <ul class="row-fluid">
                 <% @categories.each_with_index do |category, i| %>
+                  <% category.services.each do |service| %>
+                    <% service.galleries.each_with_index do |gallery, i| %>
+                      <a href="<%= gallery.photo.url %>" data-gal="prettyPhoto[gallery_<%= category.id %>]"></a>
+                    <% end %>
+                  <% end %>
                   <li class="span3" style='min-height:400px;margin-left:0; margin-right:1.55%;'>
-                    <%= image_tag category.galleries.first.photo.url(:block1) %>
+                    <a href="<%= category.galleries.first.photo.url %>" data-gal="prettyPhoto[gallery_<%= category.id %>]">
+                      <%= image_tag category.galleries.first.photo.url(:block1) %>
+                    </a>
                     <h3 class="feature" style='line-height:30px;min-height:50px;'><%= category.title %></h3>
                     <p><%= category.description %></p>
                   </li>
@@ -127,33 +134,38 @@
           <div class="row-fluid">
             <div class="span12 header">
               <hgroup>
-                <h2>Portfolio</h2>
+                <h2>Avto</h2>
                 <h3>Lorem ipsum dolor site amet</h3>
               </hgroup>
             </div>
           </div>
           <div class="row-fluid">
             <div class="span12 content">
-              <% @services.each do |service| %>
+              <% @services.each_with_index do |service| %>
                 <% if service.categories.where(:separately => true).blank? %>
+                  <% service.galleries.each_with_index do |gallery, i| %>
+                    <% if service.galleries.size > 3 && i > 2 %>
+                      <a href="<%= gallery.photo.url %>" data-gal="prettyPhoto[gallery<%= service.id %>]"></a>
+                    <% end %>
+                  <% end %>
                   <ul class="portfolio">
                     <li class="span4">
                       <div class="item">
-                        <a href="<%= service.image(0) %>" class="lightbox_trigger">
+                        <a href="<%= service.image(0) %>" data-gal="prettyPhoto[gallery<%= service.id %>]">
                           <%= image_tag service.image(0, :block2) %>
                         </a>
                       </div>
                     </li>
                     <li class="span4">
                       <div class="item">
-                        <a href="<%= service.image(1) %>" class="lightbox_trigger">
+                        <a href="<%= service.image(1) %>" data-gal="prettyPhoto[gallery<%= service.id %>]">
                           <%= image_tag service.image(1, :block2) %>
                         </a>
                       </div>
                     </li>
                     <li class="span4">
                       <div class="item">
-                        <a href="<%= service.image(2) %>" class="lightbox_trigger">
+                        <a href="<%= service.image(2) %>" data-gal="prettyPhoto[gallery<%= service.id %>]">
                           <%= image_tag service.image(2, :block2) %>
                         </a>
                       </div>
@@ -162,6 +174,44 @@
                   <div id='block2_description'>
                     <h3><%= service.title %></h3>
                     <p><%= service.description %></p>
+                    <div class='hide_data' id='for_service<%= service.id %>'>
+                      <p>
+                        <h1>Prices</h1>
+                        <table class='table'>
+                          <tr>
+                            <% Price.where(:service_id => service.id, :category_id => nil).each do |price| %>
+                              <td><%= price.title %></td>
+                            <% end %>
+                          </tr>
+                          <tr>
+                            <% Price.where(:service_id => service.id, :category_id => nil).each do |price| %>
+                              <td><%= price.cost %></td>
+                            <% end %>
+                          </tr>
+                        </table>
+                      </p>
+                      <p>Custom</p>
+                      <p>
+                        <% @categories.each do |category| %>
+                          <% if Price.where(:service_id => service.id, :category_id => category.id).first %>
+                            <h3><%= category.title %></h3>
+                            <table class='table'>
+                              <tr>
+                                <% Price.where(:service_id => service.id, :category_id => category.id).each do |price| %>
+                                  <td><%= price.title %></td>
+                                <% end %>
+                              </tr>
+                              <tr>
+                                <% Price.where(:service_id => service.id, :category_id => category.id).each do |price| %>
+                                  <td><%= price.cost %></td>
+                                <% end %>
+                              </tr>
+                            </table>
+                          <% end %>
+                        <% end %>
+                      </p>
+                    </div>
+                    <p><a href="javascript: void(0)" id='for_service<%= service.id %>' class='hide_data_btn lux_btn'>Show</a></p>
                   </div>
                 <% end %>
               <% end %>
@@ -185,24 +235,29 @@
             <div class="row-fluid">
               <div class="span12 content">
                 <% category.services.each do |service| %>
+                  <% service.galleries.each_with_index do |gallery, i| %>
+                    <% if service.galleries.size > 3 && i > 2 %>
+                      <a href="<%= gallery.photo.url %>" data-gal="prettyPhoto[gallery<%= service.id %>]"></a>
+                    <% end %>
+                  <% end %>
                   <ul class="portfolio">
                     <li class="span4">
                       <div class="item">
-                        <a href="<%= service.image(0) %>" class="lightbox_trigger">
+                        <a href="<%= service.image(0) %>" data-gal="prettyPhoto[gallery<%= service.id %>]">
                           <%= image_tag service.image(0, :block2) %>
                         </a>
                       </div>
                     </li>
                     <li class="span4">
                       <div class="item">
-                        <a href="<%= service.image(1) %>" class="lightbox_trigger">
+                        <a href="<%= service.image(1) %>" data-gal="prettyPhoto[gallery<%= service.id %>]">
                           <%= image_tag service.image(1, :block2) %>
                         </a>
                       </div>
                     </li>
                     <li class="span4">
                       <div class="item">
-                        <a href="<%= service.image(2) %>" class="lightbox_trigger">
+                        <a href="<%= service.image(2) %>" data-gal="prettyPhoto[gallery<%= service.id %>]">
                           <%= image_tag service.image(2, :block2) %>
                         </a>
                       </div>
@@ -212,6 +267,24 @@
                   <div id='block3_description'>
                     <h3><%= service.title %></h3>
                     <p><%= service.description %></p>
+                    <div class='hide_data' id='for_service<%= service.id %>'>
+                      <p>
+                        <h1>Prices</h1>
+                        <table class='table'>
+                          <tr>
+                            <% Price.where(:service_id => service.id, :category_id => category.id).each do |price| %>
+                              <td><%= price.title %></td>
+                            <% end %>
+                          </tr>
+                          <tr>
+                            <% Price.where(:service_id => service.id, :category_id => category.id).each do |price| %>
+                              <td><%= price.cost %></td>
+                            <% end %>
+                          </tr>
+                        </table>
+                      </p>
+                    </div>
+                    <p><a href="javascript: void(0)" id='for_service<%= service.id %>' class='hide_data_btn lux_btn2'>Show</a></p>
                   </div>
                 <% end %>
               </div>
@@ -253,7 +326,7 @@
                         <img src="<%= gallery.photo_url %>" alt="">
                         <div class="roll" style="<%= gallery.title.present? && gallery.description.present? ? 'top:-80px' : 'top:0px' %>">
                           <div class="wrapcaption" style="<%= gallery.title.present? && gallery.description.present? ? 'top:55%' : 'top:40%' %>">
-                            <a data-gal="prettyPhoto[gallery1]" href="<%= gallery.photo_url %>" title="<%= gallery.title %>">
+                            <a data-gal="prettyPhoto[gallery__0]" href="<%= gallery.photo_url %>" title="<%= gallery.title %>">
                                 <i class="icon-zoom-in captionicons"></i>
                             </a>
                           </div>
@@ -321,4 +394,18 @@
     <!-- ligthbox -->
     <div style="display: none;" id="lightbox"><img id="bigimg" src="" /></div>
   </body>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('.hide_data_btn').click(function(){
+      if($(this).html()=="Show"){
+        $(this).html("Hide");
+      }
+      else{
+        $(this).html("Show");
+      }
+      $(this).toggleClass('up-arrow');
+      $("div#"+this.id).slideToggle("slow");
+    });
+  });
+  </script>
 </html>
