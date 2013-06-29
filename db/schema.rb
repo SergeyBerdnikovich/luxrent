@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130626165428) do
+ActiveRecord::Schema.define(:version => 20130629170900) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -50,8 +50,10 @@ ActiveRecord::Schema.define(:version => 20130626165428) do
     t.string   "title"
     t.string   "description"
     t.boolean  "separately"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "en_title"
+    t.string   "en_description"
   end
 
   create_table "categories_services", :force => true do |t|
@@ -72,13 +74,17 @@ ActiveRecord::Schema.define(:version => 20130626165428) do
     t.string   "photo"
     t.string   "title"
     t.string   "description"
+    t.string   "en_title"
+    t.string   "en_description"
   end
 
   create_table "phrases", :force => true do |t|
     t.string   "title"
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "en_title"
+    t.string   "en_description"
   end
 
   create_table "prices", :force => true do |t|
@@ -88,13 +94,16 @@ ActiveRecord::Schema.define(:version => 20130626165428) do
     t.integer  "category_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "en_title"
   end
 
   create_table "services", :force => true do |t|
     t.string   "title"
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "en_title"
+    t.string   "en_description"
   end
 
 end
