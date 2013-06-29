@@ -1,0 +1,38 @@
+<% @separately_categories.each do |category| %>
+  <section id="block_<%= category.id %>" class="box">
+    <div class="container">
+      <div class="panel">
+        <div class="row-fluid">
+          <div class="span12 header">
+            <hgroup>
+              <h2><%= localiztion_for(category, :title) %></h2>
+              <h3><%== show_("category block#{category.id} description") %></h3>
+            </hgroup>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span12 content">
+            <% category.services.each do |service| %>
+              <%= render partial: "layouts/three_photos", locals: { :service => service } %>
+              <div clas='clear'></div>
+              <div id='block3_description'>
+                <h3><%= localiztion_for(service, :title) %></h3>
+                <p><%= localiztion_for(service, :description) %></p>
+                <div class='hide_data' id='for_service<%= service.id %>'>
+                  <p>
+                    <h1>Prices</h1>
+                    <%= render partial: "layouts/prices", locals: { :service_id => service.id,
+                                                                    :category_id => category.id } %>
+                  </p>
+                </div>
+                <p>
+                  <a href="javascript: void(0)" id='for_service<%= service.id %>' class='hide_data_btn lux_btn2'>Show</a>
+                </p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<% end %>

@@ -47,49 +47,38 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </a>
-                <a class="brand" href="javascript:void(0)"><h1 id="logo">LUXRENT</h1></a>
-                <div class="nav-collapse collapse">
-                  <ul class="nav pull-right" id="navigation">
-                    <li><a data-nav="scroll" href="#/home" class="active">HOME</a></li>
-                    <li><a data-nav="scroll" href="#/block1">ABOUT US</a></li>
-                    <li><a data-nav="scroll" href="#/block2">AVTO</a></li>
-                    <% @separately_categories.each do |category| %>
-                      <li><a data-nav="scroll" href="#/block_<%= category.id %>"><%= category.title %></a></li>
-                    <% end %>
-                    <li><a data-nav="scroll" href="#/galleries">GALLERIES</a></li>
-                    <li><a data-nav="scroll" href="#/contact">CONTACT</a></li>
-                  </ul>
-                </div>
+                <a class="brand" href="javascript:void(0)"><h1 id="logo"><%== show_("project name") %></h1></a>
+                <%= render "layouts/menu" %>
               </div>
             </div>
           </div>
         </div>
       </div>
     </header>
-    <!-- home -->
-    <section id="home" class="box">
+    <!-- block0 -->
+    <section id="block0" class="box">
       <div class="container">
         <div class="panel">
           <div class="row-fluid">
             <div class="span12">
               <hgroup id="intro" style="display: none">
-                <h2>Ember is Good for You</h2>
-                <h3>Lorem ipsum dolor sit amet</h3>
+                <h2><%== show_("block0 title") %></h2>
+                <h3><%== show_("block0 description") %></h3>
               </hgroup>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- features -->
+    <!-- block1 -->
     <section id="block1" class="box">
       <div class="container">
         <div class="panel">
           <div class="row-fluid">
             <div class="span12 header">
               <hgroup>
-                <h2>Features</h2>
-                <h3>Lorem ipsum dolor site amet</h3>
+                <h2><%== show_("block1 title") %></h2>
+                <h3><%== show_("block1 description") %></h3>
               </hgroup>
             </div>
           </div>
@@ -99,252 +88,34 @@
                 <div class="span12 pull-center">
                   <!-- <img src="/assets/Responsive-showcase-presentation.jpg" alt="" /> -->
                   <section id="slider">
-                    <div class="fullwidthbanner-container">
-                      <div class="fullwidthbanner">
-                        <ul>
-                          <% @slider_galleries.each do |gallery| %>
-                        <!-- THE FIRST SLIDE -->
-                          <li data-transition="random" data-slotamount="1" data-masterspeed="300">
-                            <img src="<%= gallery.photo.url %>" alt="Image" data-fullwidthcentering="on">
-                            <% if gallery.title.present? %>
-                            <div class="caption very_big_custom_text lfl str"
-                                 data-x="center"
-                                 data-y="455"
-                                 data-speed="300"
-                                 data-start="500"
-                                 data-easing="easeOutExpo" data-end="8400" data-endspeed="300" data-endeasing="easeInSine" ><%= gallery.title %></div>
-                            <% end %>
-                            <% if gallery.description.present? %>
-                            <div class="caption custom_text lfr stl"
-                                 data-x="center"
-                                 data-y="524"
-                                 data-speed="300"
-                                 data-start="800"
-                                 data-easing="easeOutExpo" data-end="8600" data-endspeed="300" data-endeasing="easeInSine" ><%= gallery.description %></div>
-                            <% end %>
-                            <!-- <div class="caption custom_text_link lfr"
-                                 data-x="center"
-                                 data-y="379"
-                                 data-speed="300"
-                                 data-start="1200"
-                                 data-easing="easeOutExpo" data-end="8800" data-endspeed="300" data-endeasing="easeInSine" >
-                                <span class="color-text">FOR DIGITAL OR CREATIVE AGENCY</span>
-                                <a href="#">LEARN MORE</a>
-                            </div> -->
-                          </li>
-                          <% end %>
-                        </ul>
-                      </div>
-                    </div>
+                    <%= render "layouts/slider" %>
                   </section>
                 </div>
               </div>
               <hr class="line" />
-              <div class="flexslider">
-                <ul class="slides">
-                  <% @phrases.each do |phrase| %>
-                    <li>
-                      <p class="quote">“<%= phrase.description %>”</p>
-                      <p class="customer"><%= phrase.title %></p>
-                    </li>
-                  <% end %>
-                </ul>
-              </div>
+              <%= render "layouts/phrases" %>
               <hr class="line" />
-              <ul class="row-fluid">
-                <% @categories.each_with_index do |category, i| %>
-                  <% category.services.each do |service| %>
-                    <% service.galleries.each_with_index do |gallery, i| %>
-                      <a href="<%= gallery.photo.url %>" data-gal="prettyPhoto[gallery_<%= category.id %>]"></a>
-                    <% end %>
-                  <% end %>
-                  <li class="span3" style='min-height:400px;margin-left:0; margin-right:1.55%;'>
-                    <a href="<%= category.galleries.first.photo.url %>" data-gal="prettyPhoto[gallery_<%= category.id %>]">
-                      <%= image_tag category.galleries.first.photo.url(:block1) %>
-                    </a>
-                    <h3 class="feature" style='line-height:30px;min-height:50px;'><%= category.title %></h3>
-                    <p><%= category.description %></p>
-                  </li>
-                <% end %>
-              </ul>
+              <%= render "layouts/services" %>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- portfolio -->
+    <!-- block2 -->
     <section id="block2" class="box">
-      <div class="container">
-        <div class="panel">
-          <div class="row-fluid">
-            <div class="span12 header">
-              <hgroup>
-                <h2>Avto</h2>
-                <h3>Lorem ipsum dolor site amet</h3>
-              </hgroup>
-            </div>
-          </div>
-          <div class="row-fluid">
-            <div class="span12 content">
-              <% @services.each_with_index do |service| %>
-                <% if service.categories.where(:separately => true).blank? %>
-                  <% service.galleries.each_with_index do |gallery, i| %>
-                    <% if service.galleries.size > 3 && i > 2 %>
-                      <a href="<%= gallery.photo.url %>" data-gal="prettyPhoto[gallery<%= service.id %>]"></a>
-                    <% end %>
-                  <% end %>
-                  <ul class="portfolio">
-                    <li class="span4">
-                      <div class="item">
-                        <a href="<%= service.image(0) %>" data-gal="prettyPhoto[gallery<%= service.id %>]">
-                          <%= image_tag service.image(0, :block2) %>
-                        </a>
-                      </div>
-                    </li>
-                    <li class="span4">
-                      <div class="item">
-                        <a href="<%= service.image(1) %>" data-gal="prettyPhoto[gallery<%= service.id %>]">
-                          <%= image_tag service.image(1, :block2) %>
-                        </a>
-                      </div>
-                    </li>
-                    <li class="span4">
-                      <div class="item">
-                        <a href="<%= service.image(2) %>" data-gal="prettyPhoto[gallery<%= service.id %>]">
-                          <%= image_tag service.image(2, :block2) %>
-                        </a>
-                      </div>
-                    </li>
-                  </ul>
-                  <div id='block2_description'>
-                    <h3><%= service.title %></h3>
-                    <p><%= service.description %></p>
-                    <div class='hide_data' id='for_service<%= service.id %>'>
-                      <p>
-                        <h1>Prices</h1>
-                        <table class='table'>
-                          <tr>
-                            <% Price.where(:service_id => service.id, :category_id => nil).each do |price| %>
-                              <td><%= price.title %></td>
-                            <% end %>
-                          </tr>
-                          <tr>
-                            <% Price.where(:service_id => service.id, :category_id => nil).each do |price| %>
-                              <td><%= price.cost %></td>
-                            <% end %>
-                          </tr>
-                        </table>
-                      </p>
-                      <p>
-                        <% @categories.each do |category| %>
-                          <% if Price.where(:service_id => service.id, :category_id => category.id).first %>
-                            <h3><%= category.title %></h3>
-                            <table class='table'>
-                              <tr>
-                                <% Price.where(:service_id => service.id, :category_id => category.id).each do |price| %>
-                                  <td><%= price.title %></td>
-                                <% end %>
-                              </tr>
-                              <tr>
-                                <% Price.where(:service_id => service.id, :category_id => category.id).each do |price| %>
-                                  <td><%= price.cost %></td>
-                                <% end %>
-                              </tr>
-                            </table>
-                          <% end %>
-                        <% end %>
-                      </p>
-                    </div>
-                    <p><a href="javascript: void(0)" id='for_service<%= service.id %>' class='hide_data_btn lux_btn'>Show</a></p>
-                  </div>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
+      <%= render "layouts/full_services" %>
     </section>
-    <% @separately_categories.each do |category| %>
-      <section id="block_<%= category.id %>" class="box">
-        <div class="container">
-          <div class="panel">
-            <div class="row-fluid">
-              <div class="span12 header">
-                <hgroup>
-                  <h2><%= category.title %></h2>
-                  <h3>Lorem ipsum dolor site amet</h3>
-                </hgroup>
-              </div>
-            </div>
-            <div class="row-fluid">
-              <div class="span12 content">
-                <% category.services.each do |service| %>
-                  <% service.galleries.each_with_index do |gallery, i| %>
-                    <% if service.galleries.size > 3 && i > 2 %>
-                      <a href="<%= gallery.photo.url %>" data-gal="prettyPhoto[gallery<%= service.id %>]"></a>
-                    <% end %>
-                  <% end %>
-                  <ul class="portfolio">
-                    <li class="span4">
-                      <div class="item">
-                        <a href="<%= service.image(0) %>" data-gal="prettyPhoto[gallery<%= service.id %>]">
-                          <%= image_tag service.image(0, :block2) %>
-                        </a>
-                      </div>
-                    </li>
-                    <li class="span4">
-                      <div class="item">
-                        <a href="<%= service.image(1) %>" data-gal="prettyPhoto[gallery<%= service.id %>]">
-                          <%= image_tag service.image(1, :block2) %>
-                        </a>
-                      </div>
-                    </li>
-                    <li class="span4">
-                      <div class="item">
-                        <a href="<%= service.image(2) %>" data-gal="prettyPhoto[gallery<%= service.id %>]">
-                          <%= image_tag service.image(2, :block2) %>
-                        </a>
-                      </div>
-                    </li>
-                  </ul>
-                  <div clas='clear'></div>
-                  <div id='block3_description'>
-                    <h3><%= service.title %></h3>
-                    <p><%= service.description %></p>
-                    <div class='hide_data' id='for_service<%= service.id %>'>
-                      <p>
-                        <h1>Prices</h1>
-                        <table class='table'>
-                          <tr>
-                            <% Price.where(:service_id => service.id, :category_id => category.id).each do |price| %>
-                              <td><%= price.title %></td>
-                            <% end %>
-                          </tr>
-                          <tr>
-                            <% Price.where(:service_id => service.id, :category_id => category.id).each do |price| %>
-                              <td><%= price.cost %></td>
-                            <% end %>
-                          </tr>
-                        </table>
-                      </p>
-                    </div>
-                    <p><a href="javascript: void(0)" id='for_service<%= service.id %>' class='hide_data_btn lux_btn2'>Show</a></p>
-                  </div>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    <% end %>
+    <!-- separately blocks -->
+    <%= render "layouts/separately_categories" %>
+    <!-- galleries -->
     <section id="galleries" class="box">
       <div class="container">
         <div class="panel">
           <div class="row-fluid">
             <div class="span12 header">
               <hgroup>
-                <h2>Galleries</h2>
-                <h3>Lorem ipsum dolor site amet</h3>
+                <h2><%== show_("galleries block title") %></h2>
+                <h3><%== show_("galleries block description") %></h3>
               </hgroup>
             </div>
           </div>
@@ -356,32 +127,13 @@
                     <div id="filter">
                       <ul>
                         <li><a href="" data-filter="*" class="selected"><i class="icon icon-reorder"></i> All Photos</a></li>
-                        <% @categories.each_with_index do |category, i| %>
-                          <li><a href="" data-filter=<%= ".cat_#{category.id}" %> ><i class="icon icon-reorder"></i> <%= category.title %></a></li>
-                        <% end %>
+                        <%= render "layouts/galleries_menu" %>
                       </ul>
                     </div>
                   </div>
                 </div>
                 <div id="content">
-                  <% @galleries.each do |gallery| %>
-                    <div class="boxportfolio4<%= set_categories_for_(gallery) %> ">
-                      <div class="boxcontainer">
-                        <img src="<%= gallery.photo_url %>" alt="">
-                        <div class="roll" style="<%= gallery.title.present? && gallery.description.present? ? 'top:-80px' : 'top:0px' %>">
-                          <div class="wrapcaption" style="<%= gallery.title.present? && gallery.description.present? ? 'top:55%' : 'top:40%' %>">
-                            <a data-gal="prettyPhoto[gallery__0]" href="<%= gallery.photo_url %>" title="<%= gallery.title %>">
-                                <i class="icon-zoom-in captionicons"></i>
-                            </a>
-                          </div>
-                        </div>
-                        <% if gallery.title.present? && gallery.description.present? %>
-                          <h1><a href="singleproject.html"><%= gallery.title[0..25] %></a></h1>
-                          <p><%= gallery.description[0..25] %></p>
-                        <% end %>
-                      </div>
-                    </div>
-                  <% end %>
+                  <%= render "layouts/galleries" %>
                 </div>
               </div>
             </div>
@@ -396,8 +148,8 @@
           <div class="row-fluid">
             <div class="span12 header">
               <hgroup>
-                <h2>Contact</h2>
-                <h3>Lorem ipsum dolor site amet</h3>
+                <h2><%== show_("contact block title") %></h2>
+                <h3><%== show_("contact block description") %></h3>
               </hgroup>
             </div>
           </div>

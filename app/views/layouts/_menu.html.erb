@@ -1,0 +1,12 @@
+<div class="nav-collapse collapse">
+  <ul class="nav pull-right" id="navigation">
+    <li><a data-nav="scroll" href="#/block0" class="active"><%== show_("block0 link name") %></a></li>
+    <li><a data-nav="scroll" href="#/block1"><%== show_("block1 title") %></a></li>
+    <li><a data-nav="scroll" href="#/block2"><%== show_("block2 title") %></a></li>
+    <% @separately_categories.each do |category| %>
+      <li><a data-nav="scroll" href="#/block_<%= category.id %>"><%= localiztion_for(category, :title) %></a></li>
+    <% end %>
+    <li><a data-nav="scroll" href="#/galleries"><%== show_("galleries block title") %></a></li>
+    <li><a data-nav="scroll" href="#/contact"><%== show_("contact block title") %></a></li>
+  </ul>
+</div>

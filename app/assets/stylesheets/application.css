@@ -76,6 +76,9 @@ h3.feature {
   line-height: 10px;
 }
 .nav-collapse.collapse {
-  width: 83%;
+  max-width: 70%;
   float: right;
+}
+#header .navbar .brand {
+  max-width: 25%;
 }

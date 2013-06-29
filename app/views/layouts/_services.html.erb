@@ -1,0 +1,16 @@
+<ul class="row-fluid">
+  <% @categories.each_with_index do |category, i| %>
+    <% category.services.each do |service| %>
+      <% service.galleries.each_with_index do |gallery, i| %>
+        <a href="<%= gallery.photo.url %>" data-gal="prettyPhoto[gallery_<%= category.id %>]"></a>
+      <% end %>
+    <% end %>
+    <li class="span3" style='min-height:400px;margin-left:0; margin-right:1.55%;'>
+      <a href="<%= category.galleries.first.photo.url %>" data-gal="prettyPhoto[gallery_<%= category.id %>]">
+        <%= image_tag category.galleries.first.photo.url(:block1) %>
+      </a>
+      <h3 class="feature" style='line-height:30px;min-height:50px;'><%= localiztion_for(category, :title) %></h3>
+      <p><%= localiztion_for(category, :description) %></p>
+    </li>
+  <% end %>
+</ul>

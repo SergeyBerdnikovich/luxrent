@@ -1,0 +1,7 @@
+<% @categories.each_with_index do |category, i| %>
+  <li>
+    <a href="" data-filter=<%= ".cat_#{category.id}" %> >
+      <i class="icon icon-reorder"></i> <%= localiztion_for(category, :title) %>
+    </a>
+  </li>
+<% end %>

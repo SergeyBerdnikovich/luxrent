@@ -1,0 +1,12 @@
+<table class='table'>
+  <tr>
+    <% Price.where(:service_id => service_id, :category_id => category_id).each do |price| %>
+      <td><%= localiztion_for(price, :title) %></td>
+    <% end %>
+  </tr>
+  <tr>
+    <% Price.where(:service_id => service_id, :category_id => category_id).each do |price| %>
+      <td><%= price.cost %></td>
+    <% end %>
+  </tr>
+</table>

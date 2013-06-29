@@ -1,0 +1,10 @@
+<div class="flexslider">
+  <ul class="slides">
+    <% @phrases.each do |phrase| %>
+      <li>
+        <p class="quote">“<%= localiztion_for(phrase, :description) %>”</p>
+        <p class="customer"><%= localiztion_for(phrase, :title) %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>

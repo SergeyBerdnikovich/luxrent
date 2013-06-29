@@ -1,0 +1,40 @@
+<div class="fullwidthbanner-container">
+  <div class="fullwidthbanner">
+    <ul>
+    <% @slider_galleries.each do |gallery| %>
+      <li data-transition="random" data-slotamount="1" data-masterspeed="300">
+        <img src="<%= gallery.photo.url %>" alt="Image" data-fullwidthcentering="on">
+        <% if gallery.title.present? %>
+        <div class="caption very_big_custom_text lfl str"
+             data-x="center"
+             data-y="455"
+             data-speed="300"
+             data-start="500"
+             data-easing="easeOutExpo" data-end="8400" data-endspeed="300" data-endeasing="easeInSine" >
+          <%= localiztion_for(gallery, :title) %>
+        </div>
+        <% end %>
+        <% if gallery.description.present? %>
+        <div class="caption custom_text lfr stl"
+             data-x="center"
+             data-y="524"
+             data-speed="300"
+             data-start="800"
+             data-easing="easeOutExpo" data-end="8600" data-endspeed="300" data-endeasing="easeInSine" >
+          <%= localiztion_for(gallery, :description) %>
+        </div>
+        <% end %>
+        <!-- <div class="caption custom_text_link lfr"
+             data-x="center"
+             data-y="379"
+             data-speed="300"
+             data-start="1200"
+             data-easing="easeOutExpo" data-end="8800" data-endspeed="300" data-endeasing="easeInSine" >
+            <span class="color-text">FOR DIGITAL OR CREATIVE AGENCY</span>
+            <a href="#">LEARN MORE</a>
+        </div> -->
+      </li>
+    <% end %>
+    </ul>
+  </div>
+</div>
