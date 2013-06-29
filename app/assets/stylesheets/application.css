@@ -12,6 +12,7 @@
  *= require galleries/custom
  *= require galleries/icons
  *= require galleries/prettyPhoto
+
  *= require_tree .
  */
 
@@ -67,4 +68,14 @@ h3.feature {
 .lux_btn:focus {
   outline: none;
   text-decoration: none;
+}
+#navigation {
+  text-transform: uppercase;
+}
+#header .navbar .nav > li {
+  line-height: 10px;
+}
+.nav-collapse.collapse {
+  width: 83%;
+  float: right;
 }
