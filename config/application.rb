@@ -84,6 +84,9 @@ module Luxrent
                                     slider/jquery.themepunch.plugins.min.js
                                     slider/jquery.themepunch.revolution.min.js
                                     slider/main.js
+                                    active_admin.css
+                                    active_admin.js
+                                    active_admin/print.css
                                    )
 
     # Version of your assets, change this if you want to expire all your assets
