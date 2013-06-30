@@ -8,5 +8,11 @@
     <% end %>
     <li><a data-nav="scroll" href="#/galleries"><%== show_("galleries block title") %></a></li>
     <li><a data-nav="scroll" href="#/contact"><%== show_("contact block title") %></a></li>
+    <li id="language_in_menu" class='hidden-desktop'>
+      <span>
+        <%= link_to 'RU', '/ru' %> /
+        <%= link_to 'EN', '/en' %>
+      </span>
+    </li>
   </ul>
 </div>

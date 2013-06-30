@@ -1,31 +1,3 @@
-// ----------------------------------------------------------------------------
-// Vegas - jQuery plugin 
-// Add awesome fullscreen backgrounds to your webpages.
-// v 1.3.1
-// Dual licensed under the MIT and GPL licenses.
-// http://vegas.jaysalvat.com/
-// ----------------------------------------------------------------------------
-// Copyright (C) 2012 Jay Salvat
-// http://jaysalvat.com/
-// ----------------------------------------------------------------------------
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files ( the "Software" ), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-// 
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
-// ----------------------------------------------------------------------------
 ( function( $ ){
     var $background = $( '<img />' ).addClass( 'vegas-background' ),
         $overlay    = $( '<div />' ).addClass( 'vegas-overlay' ),
@@ -66,7 +38,7 @@
                 if ( $new == $current ) {
                     return;
                 }
-                
+
                 $( window ).bind( 'load resize.vegas', function( e ) {
                     resize( $new, options );
                 });
@@ -89,7 +61,7 @@
                         .prependTo( 'body' )
                         .fadeIn( options.fade, function() {
                             $( 'body' ).trigger( 'vegascomplete', [ this, step - 1 ] );
-                            options.complete.apply( this, [ step - 1 ] );    
+                            options.complete.apply( this, [ step - 1 ] );
                         });
                 }
 
@@ -172,9 +144,9 @@
                 backgrounds: backgrounds,
                 walk: walk
             };
-            
+
             $.extend( options, $.vegas.defaults.slideshow, settings );
-                        
+
             if ( options.backgrounds != backgrounds ) {
                 if ( !settings.step ) {
                     options.step = 0;
@@ -226,7 +198,7 @@
 
             if ( !keepPause ) {
                 paused = false;
-                
+
                 $( 'body' ).trigger( 'vegasstart', [ $current.get(0), step - 1 ] );
             }
 
@@ -316,7 +288,7 @@
                 return paused;
             }
         },
-        
+
         // Preload an array of backgrounds
         preload: function( backgrounds ) {
             var cache = [];
@@ -383,7 +355,7 @@
             properties[ 'bottom' ] = 0;
         } else {
             properties[ 'top' ] = ( wh - newHeight ) / 2;
-        } 
+        }
 
         if ( !isNaN( parseInt( options.align ) ) ) {
             properties[ 'left' ] = ( 0 - ( newWidth - ww ) / 100 * parseInt( options.align ) ) + 'px';

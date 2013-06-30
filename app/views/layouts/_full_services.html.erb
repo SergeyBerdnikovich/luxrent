@@ -17,22 +17,18 @@
               <h3><%= localiztion_for(service, :title) %></h3>
               <p><%= localiztion_for(service, :description) %></p>
               <div class='hide_data' id='for_service<%= service.id %>'>
-                <p>
-                  <h1>Prices</h1>
-                  <%= render partial: "layouts/prices", locals: { :service_id => service.id, :category_id => nil } %>
-                </p>
-                <p>
-                  <% service.categories.each do |category| %>
-                    <% if Price.where(:service_id => service.id, :category_id => category.id).first %>
-                      <h3><%= localiztion_for(category, :title) %></h3>
-                      <%= render partial: "layouts/prices", locals: { :service_id => service.id,
-                                                                      :category_id => category.id } %>
-                    <% end %>
+                <h1 id='price'><%= t("prices") %></h1>
+                <%= render partial: "layouts/prices", locals: { :service_id => service.id, :category_id => nil } %>
+                <% service.categories.each do |category| %>
+                  <% if Price.where(:service_id => service.id, :category_id => category.id).first %>
+                    <h3><%= localiztion_for(category, :title) %></h3>
+                    <%= render partial: "layouts/prices", locals: { :service_id => service.id,
+                                                                    :category_id => category.id } %>
                   <% end %>
-                </p>
+                <% end %>
               </div>
               <p>
-                <a href="javascript: void(0)" id='for_service<%= service.id %>' class='hide_data_btn lux_btn'>Show</a>
+                <a href="javascript: void(0)" id='for_service<%= service.id %>' class='hide_data_btn lux_btn2'>Show</a>
               </p>
             </div>
           <% end %>

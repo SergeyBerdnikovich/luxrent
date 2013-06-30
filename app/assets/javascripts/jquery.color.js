@@ -1,12 +1,3 @@
-/*!
- * jQuery Color Animations v2.0pre
- * http://jquery.org/
- *
- * Copyright 2011 John Resig
- * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
- */
-
 (function( jQuery, undefined ){
 	var stepHooks = "backgroundColor borderBottomColor borderLeftColor borderRightColor borderTopColor color outlineColor".split(" "),
 

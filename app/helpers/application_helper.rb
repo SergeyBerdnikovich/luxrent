@@ -1,6 +1,6 @@
 module ApplicationHelper
   def localiztion_for(object, method)
-    method = "en_#{method}".to_sym if session[:locale] == 'en'
+    method = "en_#{method}".to_sym if session[:locale] == :en
     object.send(method)
   end
 
@@ -18,5 +18,29 @@ module ApplicationHelper
       end
     end
     cat
+  end
+
+  def settings_for(gallery)
+    if session[:locale] == :en
+      gallery.en_title.present? && gallery.en_description.present? ? 'top:-80px' : 'top:0px'
+    else
+      gallery.title.present? && gallery.description.present? ? 'top:-80px' : 'top:0px'
+    end
+  end
+
+  def settings2_for(gallery)
+    if session[:locale] == :en
+      gallery.en_title.present? && gallery.en_description.present? ? 'top:55%' : 'top:40%'
+    else
+      gallery.title.present? && gallery.description.present? ? 'top:55%' : 'top:40%'
+    end
+  end
+
+  def show_description_for(gallery)
+    if session[:locale] == :en
+      gallery.en_title.present? && gallery.en_description.present?
+    else
+      gallery.title.present? && gallery.description.present?
+    end
   end
 end

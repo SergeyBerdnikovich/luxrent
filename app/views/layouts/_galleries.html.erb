@@ -2,16 +2,16 @@
   <div class="boxportfolio4<%= set_categories_for_(gallery) %> ">
     <div class="boxcontainer">
       <img src="<%= gallery.photo_url %>" alt="">
-      <div class="roll" style="<%= gallery.title.present? && gallery.description.present? ? 'top:-80px' : 'top:0px' %>">
-        <div class="wrapcaption" style="<%= gallery.title.present? && gallery.description.present? ? 'top:55%' : 'top:40%' %>">
+      <div class="roll" style="<%= settings_for(gallery) %>">
+        <div class="wrapcaption" style="<%= settings2_for(gallery) %>">
           <a data-gal="prettyPhoto[gallery__0]" href="<%= gallery.photo_url %>" title="<%= gallery.title %>">
             <i class="icon-zoom-in captionicons"></i>
           </a>
         </div>
       </div>
-      <% if gallery.title.present? && gallery.description.present? %>
-        <h1><a href="singleproject.html"><%= gallery.title[0..25] %></a></h1>
-        <p><%= gallery.description[0..25] %></p>
+      <% if show_description_for(gallery) %>
+        <h1><a href="singleproject.html"><%= localiztion_for(gallery, :title)[0..25] %></a></h1>
+        <p><%= localiztion_for(gallery, :description)[0..25] %></p>
       <% end %>
     </div>
   </div>

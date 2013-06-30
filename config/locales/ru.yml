@@ -1,12 +1,12 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
+ru:
   time:
     formats:
       default: "%d-%m-%Y %I:%M %P"
       long: "%d-%m-%Y %I:%M %P"
-  all_photos: "All Photos"
-  send_message: "Send Message"
-  prices: "Prices"
-  our_phone: "Our Phone number: "
+  all_photos: "Все Фотографии"
+  send_message: "Отправить Сообщение"
+  prices: "Цены"
+  our_phone: "Наш телефон: "
