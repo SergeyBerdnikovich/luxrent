@@ -29,7 +29,7 @@ ActiveAdmin.register Gallery do
       f.input :en_description, :label => "Описание"
     end
     f.inputs "Фото", :multipart => true do
-      if f.object.photo
+      if f.object.photo && f.object.photo.url(:normal)
         f.input :photo,
                 :label => "Фото",
                 :as => :file,
