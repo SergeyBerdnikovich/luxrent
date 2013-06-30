@@ -131,6 +131,8 @@ bootstrap.min.js: bootstrap.min-e7aa913017ad12d08da2c6a13f76edd2.js
 bootstrap/index.min.js: bootstrap.min-e7aa913017ad12d08da2c6a13f76edd2.js
 crossroads.min.js: crossroads.min-65210f3754f77de03482d344de8fe6c9.js
 crossroads/index.min.js: crossroads.min-65210f3754f77de03482d344de8fe6c9.js
+galleries.js: galleries-881446b7e5bfa39ef437326adf706ba0.js
+galleries/index.js: galleries-881446b7e5bfa39ef437326adf706ba0.js
 galleries/jquery.isotope.min.js: galleries/jquery.isotope.min-a58d6b7552c5ea7caa26364cfe3ea638.js
 galleries/jquery/index.isotope.min.js: galleries/jquery.isotope.min-a58d6b7552c5ea7caa26364cfe3ea638.js
 galleries/jquery.prettyPhoto.js: galleries/jquery.prettyPhoto-b1c8590e9c49024c53a3e3826279b934.js
