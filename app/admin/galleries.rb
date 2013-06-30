@@ -31,8 +31,7 @@ ActiveAdmin.register Gallery do
     f.inputs "Фото", :multipart => true do
       f.input :photo,
               :label => "Фото",
-              :as => :file,
-              :hint => (f.object.photo ? f.template.image_tag(f.object.photo.url(:normal)) : nil )
+              :as => :file
     end
     f.inputs "Другое" do
       f.input :category, :label => "Категория(1 фото для каждой категории)"
