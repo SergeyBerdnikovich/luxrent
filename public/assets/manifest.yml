@@ -125,8 +125,8 @@ slider/timer.png: slider/timer-f5189391f19f3c175c7f8e8b50a2e6ee.png
 slider/timer/index.png: slider/timer-f5189391f19f3c175c7f8e8b50a2e6ee.png
 active_admin.js: active_admin-cf13060594fabad069dbd18495a52e2c.js
 active_admin/index.js: active_admin-cf13060594fabad069dbd18495a52e2c.js
-application.js: application-b3da75ec53639c30c909e8a3a980b4a2.js
-application/index.js: application-b3da75ec53639c30c909e8a3a980b4a2.js
+application.js: application-c8d8c54486ad5341b1cde948a1d42981.js
+application/index.js: application-c8d8c54486ad5341b1cde948a1d42981.js
 bootstrap.min.js: bootstrap.min-e7aa913017ad12d08da2c6a13f76edd2.js
 bootstrap/index.min.js: bootstrap.min-e7aa913017ad12d08da2c6a13f76edd2.js
 crossroads.min.js: crossroads.min-65210f3754f77de03482d344de8fe6c9.js
@@ -153,6 +153,8 @@ slider/jquery.themepunch.revolution.min.js: slider/jquery.themepunch.revolution.
 slider/jquery/index.themepunch.revolution.min.js: slider/jquery.themepunch.revolution.min-fb4b520687d7a123ca49b4c65701eb6d.js
 slider/main.js: slider/main-bbb6f5861225ebb087d014c3084de910.js
 slider/main/index.js: slider/main-bbb6f5861225ebb087d014c3084de910.js
+theme.js: theme-bed33ba66d4ba9a1b05c737315e6171a.js
+theme/index.js: theme-bed33ba66d4ba9a1b05c737315e6171a.js
 active_admin.css: active_admin-15cfa3ee782b38c0febc38ad3c9f76ab.css
 active_admin/index.css: active_admin-15cfa3ee782b38c0febc38ad3c9f76ab.css
 application.css: application-2c5cc790e1a35556b75abb6b1a79e40e.css
