@@ -139,6 +139,8 @@ galleries/twitter-bootstrap-hover-dropdown.js: galleries/twitter-bootstrap-hover
 galleries/twitter-bootstrap-hover-dropdown/index.js: galleries/twitter-bootstrap-hover-dropdown-a125fb86ec147d29b365e8dfb3f45eb9.js
 hasher.min.js: hasher.min-9a4596812d005bfe8d34d19934169de3.js
 hasher/index.min.js: hasher.min-9a4596812d005bfe8d34d19934169de3.js
+jquery.Jcrop.js: jquery.Jcrop-65836a7fd521ec99d6e7b92178e47cad.js
+jquery/index.Jcrop.js: jquery.Jcrop-65836a7fd521ec99d6e7b92178e47cad.js
 jquery.flexslider-min.js: jquery.flexslider-min-4db96b01aed4e240b2e951da57ca3100.js
 jquery/index.flexslider-min.js: jquery.flexslider-min-4db96b01aed4e240b2e951da57ca3100.js
 jquery.min.js: jquery.min-924451f91e1b8551b6f078ee754a0722.js
@@ -157,8 +159,8 @@ theme.js: theme-bed33ba66d4ba9a1b05c737315e6171a.js
 theme/index.js: theme-bed33ba66d4ba9a1b05c737315e6171a.js
 active_admin.css: active_admin-15cfa3ee782b38c0febc38ad3c9f76ab.css
 active_admin/index.css: active_admin-15cfa3ee782b38c0febc38ad3c9f76ab.css
-application.css: application-2c5cc790e1a35556b75abb6b1a79e40e.css
-application/index.css: application-2c5cc790e1a35556b75abb6b1a79e40e.css
+application.css: application-93807178743e649403b2379b5b25df32.css
+application/index.css: application-93807178743e649403b2379b5b25df32.css
 bootstrap.min.css: bootstrap.min-eb0f848d2a85db42c60bd4829f386ea4.css
 bootstrap/index.min.css: bootstrap.min-eb0f848d2a85db42c60bd4829f386ea4.css
 flexslider.css: flexslider-87f6bbc0fc03ce8aaa73dd10b07a41c4.css
@@ -171,6 +173,8 @@ galleries/icons.css: galleries/icons-dbe552d1ac51fb2bcf7cf3212f444616.css
 galleries/icons/index.css: galleries/icons-dbe552d1ac51fb2bcf7cf3212f444616.css
 galleries/prettyPhoto.css: galleries/prettyPhoto-47fb6ad1ea22b28cf662766dcc8527d3.css
 galleries/prettyPhoto/index.css: galleries/prettyPhoto-47fb6ad1ea22b28cf662766dcc8527d3.css
+jquery.Jcrop.css: jquery.Jcrop-84a3f0699c1cc84179e16d6a2bca8341.css
+jquery/index.Jcrop.css: jquery.Jcrop-84a3f0699c1cc84179e16d6a2bca8341.css
 jquery.vegas.css: jquery.vegas-9b9a4a24b96b84eb5e4351d1797d41cc.css
 jquery/index.vegas.css: jquery.vegas-9b9a4a24b96b84eb5e4351d1797d41cc.css
 slider/settings.css: slider/settings-612836ba9a89645541f198d5ea38ac1f.css

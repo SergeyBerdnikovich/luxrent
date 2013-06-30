@@ -87,6 +87,9 @@ module Luxrent
                                     active_admin.css
                                     active_admin.js
                                     active_admin/print.css
+                                    jquery.Jcrop.css
+                                    jquery.Jcrop.js
+                                    galleries.js.coffee
                                    )
 
     # Version of your assets, change this if you want to expire all your assets
