@@ -1,3 +1,5 @@
+
+
 var readyState = function(callback)
 {
     var body = document.body;
@@ -157,19 +159,6 @@ readyState(function()
 
         return false;
     });
-
-    /**
-     * Vegas background image slider
-     */
-    $.vegas('slideshow',
-    {
-        delay: 10000,
-        backgrounds: [
-          <% Gallery.for_background.each do |gallery| %>
-             { src: '<%= gallery.photo.url %>', fade: 2000 },
-          <% end %>
-        ]
-    })('overlay');
 
     /**
      * Lightbox

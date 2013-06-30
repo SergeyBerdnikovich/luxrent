@@ -264,6 +264,16 @@
       });
     });
   });
+
+  $.vegas('slideshow',
+    {
+        delay: 10000,
+        backgrounds: [
+          <% Gallery.for_background.each do |gallery| %>
+             { src: '<%= gallery.photo.url %>', fade: 2000 },
+          <% end %>
+        ]
+    })('overlay');
   </script>
   <%= yield :scripts %>
 </html>

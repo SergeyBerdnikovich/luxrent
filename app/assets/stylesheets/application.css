@@ -30,7 +30,7 @@ h3.feature {
   padding: 5px 15px;
   text-transform: uppercase;
   background: white;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 1.15);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 1);
   border-radius: 4px 4px 4px 4px;
   background: none repeat scroll 0 0 #434343 !important;
   /*color: #F5F508;*/
