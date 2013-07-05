@@ -37,7 +37,7 @@ load 'deploy/assets'
 # авторизацию на другие хосты.
 # Если вы не используете авторизацию SSH по ключам И ssh-agent,
 # закомментируйте эту опцию.
-#ssh_options[:forward_agent] = true
+ssh_options[:forward_agent] = true
 
 # Имя вашего проекта в панели управления.
 # Не меняйте это значение без необходимости, оно используется дальше.
@@ -50,7 +50,7 @@ set :deploy_server,   "boron.locum.ru"
 set :bundle_without,  [:development, :test]
 
 set :user,            "hosting_luxrent000"
-set :login,           "atom11"
+set :login,           "luxrent000"
 set :use_sudo,        false
 set :deploy_to,       "/home/#{user}/projects/#{application}"
 set :unicorn_conf,    "/etc/unicorn/#{application}.#{login}.rb"
@@ -60,12 +60,10 @@ role :web,            deploy_server
 role :app,            deploy_server
 role :db,             deploy_server, :primary => true
 
-
 # Следующие строки необходимы, т.к. ваш проект использует rvm.
 set :rvm_ruby_string, "2.0.0"
 set :rake,            "rvm use #{rvm_ruby_string} do bundle exec rake"
 set :bundle_cmd,      "rvm use #{rvm_ruby_string} do bundle"
-
 
 # Настройка системы контроля версий и репозитария,
 # по умолчанию - git, если используется иная система версий,
@@ -88,9 +86,7 @@ task :set_current_release, :roles => :app do
     set :current_release, latest_release
 end
 
-
   set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use #{rvm_ruby_string} do bundle exec unicorn_rails -Dc #{unicorn_conf})"
-
 
 
 # - for unicorn - #
