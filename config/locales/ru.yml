@@ -10,3 +10,8 @@ ru:
   send_message: "Отправить Сообщение"
   prices: "Цены"
   our_phone: "Наш телефон: "
+  send_msg:
+    full_name: "Ваше имя и фамилия"
+    email: "Ваша электронная почта"
+    subject: "Тема сообщения"
+    message: "Сообщение"

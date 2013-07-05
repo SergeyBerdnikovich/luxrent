@@ -10,3 +10,8 @@ en:
   send_message: "Send Message"
   prices: "Prices"
   our_phone: "Our Phone number: "
+  send_msg:
+    full_name: "Your Full Name"
+    email: "Your Email"
+    subject: "Message Subject"
+    message: "Your Message"

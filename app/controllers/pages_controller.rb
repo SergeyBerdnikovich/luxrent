@@ -7,4 +7,10 @@ class PagesController < ApplicationController
     @slider_galleries = Gallery.where(:for_small_slider => true)
     @separately_categories = Category.where(:separately => true)
   end
+
+  def send_message
+    Mailer.send_message(params).deliver if params[:full_name].present? && params[:email].present? && params[:subject].present? && params[:message].present?
+
+    redirect_to root_path
+  end
 end

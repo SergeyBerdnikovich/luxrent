@@ -169,25 +169,25 @@
                   <div><%= t("our_phone") %><%== show_("phone number") %></div>
                 </div>
                 <div class="span6">
-                  <form>
+                  <%= form_tag send_message_path do %>
                     <fieldset>
                       <div class="control-group">
                         <div class="controls">
-                          <input class="span12" type="text" placeholder="Your Full Name">
+                          <%= text_field_tag :full_name, '', :class => 'span12', :placeholder => t("send_msg.full_name") %>
                         </div>
                         <div class="controls">
-                          <input class="span12" type="text" placeholder="Your Email">
+                          <%= text_field_tag :email, '', :class => 'span12', :placeholder => t("send_msg.email") %>
                         </div>
                         <div class="controls">
-                          <input class="span12" type="text" placeholder="Message Subject">
+                          <%= text_field_tag :subject, '', :class => 'span12', :placeholder => t("send_msg.subject") %>
                         </div>
                         <div class="controls">
-                          <textarea class="span12" id="textarea" rows="6" placeholder="Your Message"></textarea>
+                          <%= text_area_tag :message, '', :class => 'span12', :placeholder => t("send_msg.message"), :rows => 6 %>
                         </div>
-                        <button class="btn btn-default"><%= t("send_message") %></button>
+                        <%= submit_tag t("send_message"), :class => 'lux_btn2' %>
                       </div>
                     </fieldset>
-                  </form>
+                  <% end %>
                 </div>
               </div>
             </div>

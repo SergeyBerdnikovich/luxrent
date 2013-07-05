@@ -15,3 +15,4 @@
 /tmp
 /public/images/*
 /public/uploads/*
+/config/database.yml
