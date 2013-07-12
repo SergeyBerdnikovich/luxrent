@@ -5,7 +5,7 @@ ActiveAdmin.register Gallery do
   index do
     column 'Ид', :id
     column 'Фото', :photo do |gallery|
-      image_tag gallery.photo.url(:small)
+      image_tag gallery.photo.url(:small), :size => '60x60'
     end
     column 'Для фона?', :for_big_slider
     column 'Для слайдера?', :for_small_slider

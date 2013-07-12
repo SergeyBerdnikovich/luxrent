@@ -43,4 +43,8 @@ module ApplicationHelper
       gallery.title.present? && gallery.description.present?
     end
   end
+
+  def photo_for(object, size)
+    object ? object.photo.url(size) : '/assets/no_image.png'
+  end
 end
