@@ -3,7 +3,8 @@ class PagesController < ApplicationController
     @categories = Category.all
     @phrases = Phrase.all
     @services = Service.all
-    @galleries = Gallery.all(:order => "RANDOM()")
+    # @galleries = Gallery.limit(8).all(:order => "RANDOM()")
+    @galleries = Gallery.where("category_id IS NOT NULL").order("RANDOM()")
     @slider_galleries = Gallery.where(:for_small_slider => true)
     @separately_categories = Category.where(:separately => true)
   end

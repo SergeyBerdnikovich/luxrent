@@ -167,6 +167,7 @@
                   </div>
                   <%#== show_("address") %>
                   <div><%= t("our_phone") %><%== show_("phone number") %></div>
+                  <div><%== show_('contact info') %></div>
                 </div>
                 <div class="span6">
                   <%= form_tag send_message_path do %>
@@ -200,12 +201,14 @@
   </body>
   <script type="text/javascript">
   $(document).ready(function(){
+    var price = "<%= t 'price_btn' %>";
+    var price_hide = "<%= t 'price_btn_hide' %>";
     $('.hide_data_btn').click(function(){
-      if($(this).html()=="Show"){
-        $(this).html("Hide");
+      if($(this).html()==price){
+        $(this).html(price_hide);
       }
       else{
-        $(this).html("Show");
+        $(this).html(price);
       }
       $(this).toggleClass('up-arrow');
       $("div#"+this.id).slideToggle("slow");

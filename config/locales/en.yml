@@ -15,3 +15,5 @@ en:
     email: "Your Email"
     subject: "Message Subject"
     message: "Your Message"
+  price_btn: "Prices"
+  price_btn_hide: "Hide"

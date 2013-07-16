@@ -20,6 +20,14 @@ module ApplicationHelper
     cat
   end
 
+  def set_categories2_for_(image)
+    cat = ""
+    if image.category
+      cat = " cat_#{image.category.id}"
+    end
+    cat
+  end
+
   def settings_for(gallery)
     if session[:locale] == :en
       gallery.en_title.present? && gallery.en_description.present? ? 'top:-80px' : 'top:0px'

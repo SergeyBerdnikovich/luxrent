@@ -1,7 +1,7 @@
 <% @galleries.each do |gallery| %>
-  <div class="boxportfolio4<%= set_categories_for_(gallery) %> ">
+  <div class="boxportfolio4<%= set_categories2_for_(gallery) %> ">
     <div class="boxcontainer">
-      <img src="<%= gallery.photo_url %>" alt="">
+      <img src="<%= gallery.photo_url(:for_gallery) %>" alt="">
       <div class="roll" style="<%= settings_for(gallery) %>">
         <div class="wrapcaption" style="<%= settings2_for(gallery) %>">
           <a data-gal="prettyPhoto[gallery__0]" href="<%= gallery.photo_url %>" title="<%= gallery.title %>">

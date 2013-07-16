@@ -27,7 +27,7 @@ body
 
 h1, h2, h3
 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', serif;
     font-weight: 300;
 }
 
@@ -233,7 +233,7 @@ ul
 {
     background: whitesmoke;
     padding: 90px;
-    text-align: justify;
+    text-align: left;
     text-justify: inter-word;
         -webkit-border-bottom-right-radius: 10px;
         -webkit-border-bottom-left-radius: 10px;

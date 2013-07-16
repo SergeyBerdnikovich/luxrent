@@ -19,6 +19,9 @@
 h3.feature {
   line-height: 30px;
 }
+#block1 {
+  font-family: 'Sanchez', serif !important;
+}
 #block2_description {
   margin: 15px 5px;
 }
@@ -79,11 +82,11 @@ h3.feature {
   line-height: 10px;
 }
 .nav-collapse.collapse {
-  max-width: 70%;
+  max-width: 84%;
   float: right;
 }
 #header .navbar .brand {
-  max-width: 25%;
+  max-width: 15%;
 }
 #language {
   background: none repeat scroll 0 0 rgba(51, 51, 51, 0.75);

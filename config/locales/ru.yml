@@ -15,3 +15,5 @@ ru:
     email: "Ваша электронная почта"
     subject: "Тема сообщения"
     message: "Сообщение"
+  price_btn: "Цены"
+  price_btn_hide: "Спрятать"

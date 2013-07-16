@@ -26,15 +26,15 @@ ActiveAdmin.register Category do
     end
     f.inputs "Дополнительно" do
       f.input :separately, :label => "В отдельном блоке?"
-      f.has_many :galleries do |association|
-        if !association.object.nil?
-          association.input :_destroy, :as => :boolean, :required => false, :label => "Удалить?"
-        end
-        association.input :photo,
-                          :label => "Фото для блока 1 (не более 1 штуки)",
-                          :as => :file,
-                          :hint => (f.object.galleries.first ? f.template.image_tag(f.object.galleries.first.photo.url(:block2)) : nil)
-      end
+      # f.has_many :galleries do |association|
+      #   if !association.object.nil?
+      #     association.input :_destroy, :as => :boolean, :required => false, :label => "Удалить?"
+      #   end
+      #   association.input :photo,
+      #                     :label => "Фото для блока 1 (не более 1 штуки)",
+      #                     :as => :file,
+      #                     :hint => (f.object.galleries.first ? f.template.image_tag(f.object.galleries.first.photo.url(:block2)) : nil)
+      # end
     end
 
     f.actions
