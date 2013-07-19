@@ -15,7 +15,9 @@
 
  *= require_tree .
  */
-
+:focus, a:focus {
+  outline: none !important;
+}
 h3.feature {
   line-height: 30px;
 }
@@ -114,4 +116,7 @@ h3.feature {
 }
 h1#price {
   margin: 0 0 5px;
+}
+.contact_info {
+  font-size: 18px !important;
 }

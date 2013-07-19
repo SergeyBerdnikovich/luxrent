@@ -55,4 +55,8 @@ module ApplicationHelper
   def photo_for(object, size)
     object ? object.photo.url(size) : '/assets/no_image.png'
   end
+
+  def alt_for(gallery)
+    gallery.present? ? localiztion_for(gallery, :title) : ""
+  end
 end

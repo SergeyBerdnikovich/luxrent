@@ -7,13 +7,13 @@
     <%# end %>
     <li class="span3" style='min-height:400px;margin-left:0; margin-right:1.55%;'>
       <a href="<%= category.galleries.first.try(:photo).try(:url) %>" data-gal="prettyPhoto[gallery_<%= category.id %>]">
-        <%= image_tag photo_for(category.galleries.first, :block1) %>
+        <%= image_tag photo_for(category.galleries.first, :block1), :alt => alt_for(category.galleries.first) %>
       </a>
       <h3 class="feature" style='line-height:30px;min-height:50px;'><%= localiztion_for(category, :title) %></h3>
       <p><%= localiztion_for(category, :description) %></p>
     </li>
     <% category.galleries.each_with_index do |gallery, i| %>
-      <% if i > 0%>
+      <% if i > 0 %>
         <a href="<%= gallery.photo.url %>" data-gal="prettyPhoto[gallery_<%= category.id %>]"></a>
       <% end %>
     <% end %>

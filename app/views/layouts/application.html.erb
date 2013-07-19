@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>LUXRENT</title>
+    <%= display_meta_tags :site => "luxauto.by",
+                                             :title => show_("seo title"),
+                                             :reverse => true,
+                                             :description => show_("meta description"),
+                                             :keywords => show_("meta keywords") %>
       <meta charset="utf-8" />
       <%= stylesheet_link_tag    "application", :media => "all" %>
       <%#= javascript_include_tag "application" %>
@@ -167,7 +171,7 @@
                   </div>
                   <%#== show_("address") %>
                   <div><%= t("our_phone") %><%== show_("phone number") %></div>
-                  <div><%== show_('contact info') %></div>
+                  <div class='contact_info'><%== show_('contact info') %></div>
                 </div>
                 <div class="span6">
                   <%= form_tag send_message_path do %>
@@ -219,9 +223,11 @@
     var projet_name = "<%== show_('project name') %>"
     var phone_number = "<%== show_('phone number') %>"
     var latlng
-    $.getJSON("http://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&sensor=false", function(json){
-      var lat = json.results[0].geometry.location.lat;
-      var lng = json.results[0].geometry.location.lng;
+    // $.getJSON("http://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&sensor=false", function(json){
+      // var lat = json.results[0].geometry.location.lat;
+      // var lng = json.results[0].geometry.location.lng;
+      var lat = 53.858877;
+      var lng = 27.639877;
       // alert("lat: " + lat + " lng: "+lng );
       latlng = new google.maps.LatLng(lat, lng);
       var settings = {
@@ -265,7 +271,7 @@
       google.maps.event.addListener(companyMarker, 'click', function() {
         infowindow.open(map,companyMarker);
       });
-    });
+    // });
   });
 
   $.vegas('slideshow',

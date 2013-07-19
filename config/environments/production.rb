@@ -68,7 +68,7 @@ Luxrent::Application.configure do
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :user_name            => 'luxrent000@gmail.com',
+    :user_name            => 'luxauto000@gmail.com',
     :password             => '1234035aab',
     :domain               => 'gmail.com',
     :authentication       => 'plain',

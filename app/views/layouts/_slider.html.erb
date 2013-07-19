@@ -3,7 +3,7 @@
     <ul>
     <% @slider_galleries.each do |gallery| %>
       <li data-transition="random" data-slotamount="1" data-masterspeed="300">
-        <img src="<%= gallery.photo.url %>" alt="Image" data-fullwidthcentering="on">
+        <img src="<%= gallery.photo.url %>" alt="<%= alt_for(gallery) %>" data-fullwidthcentering="on">
         <% if gallery.title.present? %>
         <div class="caption very_big_custom_text lfl str"
              data-x="center"
