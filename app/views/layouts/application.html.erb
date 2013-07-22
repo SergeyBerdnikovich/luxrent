@@ -223,12 +223,11 @@
     var projet_name = "<%== show_('project name') %>"
     var phone_number = "<%== show_('phone number') %>"
     var latlng
-    // $.getJSON("http://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&sensor=false", function(json){
-      // var lat = json.results[0].geometry.location.lat;
-      // var lng = json.results[0].geometry.location.lng;
-      var lat = 53.858877;
-      var lng = 27.639877;
-      // alert("lat: " + lat + " lng: "+lng );
+    $.getJSON("http://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&sensor=false", function(json){
+      var lat = json.results[0].geometry.location.lat;
+      var lng = json.results[0].geometry.location.lng;
+      // var lat = 53.858877;
+      // var lng = 27.639877;
       latlng = new google.maps.LatLng(lat, lng);
       var settings = {
       zoom: 15,
@@ -284,5 +283,6 @@
         ]
     })('overlay');
   </script>
+  <%= render "layouts/google_analytics" %>
   <%= yield :scripts %>
 </html>
