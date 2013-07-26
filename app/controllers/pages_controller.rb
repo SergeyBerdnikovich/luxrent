@@ -1,12 +1,12 @@
 class PagesController < ApplicationController
   def welcome
-    @categories = Category.all
+    @categories = Category.includes(:galleries).all
     @phrases = Phrase.all
-    @services = Service.all
+    @services = Service.includes([:galleries, :prices]).all
     # @galleries = Gallery.limit(8).all(:order => "RANDOM()")
     @galleries = Gallery.where("category_id IS NOT NULL").order("RANDOM()")
     @slider_galleries = Gallery.where(:for_small_slider => true)
-    @separately_categories = Category.where(:separately => true)
+    @separately_categories = Category.includes(:galleries).where(:separately => true)
   end
 
   def send_message
