@@ -20,15 +20,18 @@
                 <h1 id='price'><%= t("prices") %></h1>
                 <%= render partial: "layouts/prices", locals: { :service_id => service.id, :category_id => nil } %>
                 <% service.categories.each do |category| %>
-                  <% if Price.where(:service_id => service.id, :category_id => category.id).first %>
+                  <% if @prices.select { |pr| pr.service_id == service.id && pr.category_id == category.id }.first %>
+                  <%# if Price.where(:service_id => service.id, :category_id => category.id).first %>
                     <h3><%= localiztion_for(category, :title) %></h3>
                     <%= render partial: "layouts/prices", locals: { :service_id => service.id,
-                                                                    :category_id => category.id } %>
+                                                                                                :category_id => category.id } %>
                   <% end %>
                 <% end %>
               </div>
               <p>
-                <a href="javascript: void(0)" id='for_service<%= service.id %>' class='hide_data_btn lux_btn2'><%= t 'price_btn' %></a>
+                <a href="javascript: void(0)" id='for_service<%= service.id %>' class='hide_data_btn lux_btn2'>
+                  <%= t 'price_btn' %>
+                </a>
               </p>
             </div>
           <% end %>

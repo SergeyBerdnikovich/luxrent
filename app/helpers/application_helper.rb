@@ -5,7 +5,8 @@ module ApplicationHelper
   end
 
   def show_(name)
-    content = Setting.find_by_title(name)
+    content = @settings.select { |setting| setting.title == name }.first
+    #content = Setting.find_by_title(name)
     content ? text = localiztion_for(content, :content) : content = Setting.create!(:title => name)
     text.present? ? text : "#{ link_to 'edit me', edit_admin_setting_path(content) }"
   end

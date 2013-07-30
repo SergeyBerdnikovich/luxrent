@@ -1,12 +1,22 @@
 class PagesController < ApplicationController
   def welcome
-    @categories = Category.includes(:galleries).all
+    @categories = Category.all
     @phrases = Phrase.all
-    @services = Service.includes([:galleries, :prices]).all
-    # @galleries = Gallery.limit(8).all(:order => "RANDOM()")
-    @galleries = Gallery.where("category_id IS NOT NULL").order("RANDOM()")
-    @slider_galleries = Gallery.where(:for_small_slider => true)
-    @separately_categories = Category.includes(:galleries).where(:separately => true)
+    @services = Service.all
+    @all_galleries = Gallery.all
+    @settings = Setting.all
+    @prices = Price.all
+
+    @galleries = @all_galleries.select(&:category_id).sort_by { rand }
+    @slider_galleries = @all_galleries.select(&:for_small_slider)
+    @bg_galleries = @all_galleries.select(&:for_big_slider)
+
+    @separately_categories = @categories.select(&:separately)
+
+    # @galleries = Gallery.where("category_id IS NOT NULL").order("RANDOM()")
+    # @slider_galleries = Gallery.for_slider
+    # @bg_galleries = Gallery.for_background
+    # @separately_categories = Category.includes(:galleries).where(:separately => true)
   end
 
   def send_message

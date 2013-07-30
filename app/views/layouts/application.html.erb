@@ -7,7 +7,6 @@
                                              :description => show_("meta description"),
                                              :keywords => show_("meta keywords") %>
       <meta charset="utf-8" />
-      <%#= favicon_link_tag 'favicon.ico' %>
       <%= stylesheet_link_tag    "application", :media => "all" %>
       <%#= javascript_include_tag "application" %>
       <%= javascript_include_tag "jquery.min" %>
@@ -58,7 +57,9 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </a>
-                <a class="brand" href="javascript:void(0)"><h1 id="logo"><%== show_("project name") %></h1></a>
+                <a class="brand" href="javascript:void(0)">
+                  <h1 id="logo"><%== show_("project name") %></h1>
+                </a>
                 <%= render "layouts/menu" %>
               </div>
             </div>
@@ -137,7 +138,11 @@
                   <div class="span12 text-center">
                     <div id="filter">
                       <ul>
-                        <li><a href="" data-filter="*" class="selected"><i class="icon icon-reorder"></i><%= t("all_photos") %></a></li>
+                        <li>
+                          <a href="" data-filter="*" class="selected">
+                            <i class="icon icon-reorder"></i><%= t("all_photos") %>
+                          </a>
+                        </li>
                         <%= render "layouts/galleries_menu" %>
                       </ul>
                     </div>
@@ -255,7 +260,7 @@
     {
         delay: 10000,
         backgrounds: [
-          <% Gallery.for_background.each do |gallery| %>
+          <% @bg_galleries.each do |gallery| %>
              { src: '<%= gallery.photo.url %>', fade: 2000 },
           <% end %>
         ]

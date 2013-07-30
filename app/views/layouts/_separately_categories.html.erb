@@ -21,7 +21,7 @@
                 <div class='hide_data' id='for_service<%= service.id %>'>
                   <h1 id='price'><%= t("prices") %></h1>
                   <%= render partial: "layouts/prices", locals: { :service_id => service.id,
-                                                                  :category_id => category.id } %>
+                                                                                              :category_id => category.id } %>
                 </div>
                 <p>
                   <a href="javascript: void(0)" id='for_service<%= service.id %>' class='hide_data_btn lux_btn2'><%= t 'price_btn' %></a>
