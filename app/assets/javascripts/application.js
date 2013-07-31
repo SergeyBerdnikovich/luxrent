@@ -12,4 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+
+//= require theme
+//= require jquery.vegas
+//= require bootstrap.min
+//= require jquery.flexslider-min
+//= require signals.min
+//= require crossroads.min
+//= require hasher.min
+
+//= require galleries/jquery.isotope.min
+//= require galleries/jquery.prettyPhoto
+//= require galleries/twitter-bootstrap-hover-dropdown
+
+//= require slider/jquery.themepunch.plugins.min
+//= require slider/jquery.themepunch.revolution.min
+//= require slider/main
