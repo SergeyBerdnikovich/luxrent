@@ -60,4 +60,12 @@ module ApplicationHelper
   def alt_for(gallery)
     gallery.present? ? localiztion_for(gallery, :title) : ""
   end
+
+  def image(galleries, i, size = :original)
+    if galleries[i]
+      size == :original ? galleries[i].photo.url : galleries[i].photo.url(size)
+    else
+     '/assets/no_image.png'
+    end
+  end
 end

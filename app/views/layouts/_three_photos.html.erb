@@ -1,5 +1,8 @@
-<% service.galleries.each_with_index do |gallery, i| %>
-  <% if service.galleries.size > 3 && i > 2 %>
+<% galleries_for_service = @all_galleries.select { |gallery| gallery.service_id == service.id } %>
+<% galleries_for_service.each_with_index do |gallery, i| %>
+<%# service.galleries.each_with_index do |gallery, i| %>
+  <% if galleries_for_service.size > 3 && i > 2 %>
+  <%# if service.galleries.size > 3 && i > 2 %>
     <a href="<%= gallery.photo.url %>" data-gal="prettyPhoto[gallery<%= service.id %>]"></a>
   <% end %>
 <% end %>
@@ -7,8 +10,8 @@
   <% (0..2).each do |el| %>
     <li class="span4">
       <div class="item">
-        <a href="<%= service.image(el) %>" data-gal="prettyPhoto[gallery<%= service.id %>]">
-          <%= image_tag service.image(el, :block2) %>
+        <a href="<%= image(galleries_for_service, el) %>" data-gal="prettyPhoto[gallery<%= service.id %>]">
+          <%= image_tag image(galleries_for_service, el, :block2) %>
         </a>
       </div>
     </li>

@@ -1,11 +1,11 @@
 class PagesController < ApplicationController
   def welcome
-    @categories = Category.all
-    @phrases = Phrase.all
-    @services = Service.all
-    @all_galleries = Gallery.all
-    @settings = Setting.all
+    @all_galleries = Gallery.all(:include => [:category])
     @prices = Price.all
+    @categories = Category.all(:include => [:services])
+    @services = Service.all(:include => [:categories])
+    @phrases = Phrase.all
+    @settings = Setting.all
 
     @galleries = @all_galleries.select(&:category_id).sort_by { rand }
     @slider_galleries = @all_galleries.select(&:for_small_slider)
@@ -25,3 +25,9 @@ class PagesController < ApplicationController
     redirect_to root_path
   end
 end
+
+# class Exits
+#   extend Garb::Model
+#   metrics :exits, :pageviews, :exit_rate, :new_visits
+#   dimensions :page_path, :continent
+# end

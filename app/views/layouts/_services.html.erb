@@ -12,7 +12,8 @@
       <h3 class="feature" style='line-height:30px;min-height:50px;'><%= localiztion_for(category, :title) %></h3>
       <p><%= localiztion_for(category, :description) %></p>
     </li>
-    <% category.galleries.each_with_index do |gallery, i| %>
+    <%# category.galleries.each_with_index do |gallery, i| %>
+    <% @all_galleries.select { |gallery| gallery.category_id == category.id }.each_with_index do |gallery, i| %>
       <% if i > 0 %>
         <a href="<%= gallery.photo.url %>" data-gal="prettyPhoto[gallery_<%= category.id %>]"></a>
       <% end %>
