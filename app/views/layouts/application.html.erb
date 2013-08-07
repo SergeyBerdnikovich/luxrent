@@ -9,23 +9,7 @@
       <meta charset="utf-8" />
       <%= stylesheet_link_tag    "application", :media => "all" %>
       <%= javascript_include_tag "application" %>
-      <%#= javascript_include_tag "jquery.min" %>
-      <%#= javascript_include_tag "theme" %>
-      <%#= javascript_include_tag "jquery.vegas" %>
-      <%#= javascript_include_tag "bootstrap.min" %>
-      <%#= javascript_include_tag "jquery.flexslider-min" %>
-      <%#= javascript_include_tag "crossroads.min" %>
-      <%#= javascript_include_tag "signals.min" %>
-      <%#= javascript_include_tag "hasher.min" %>
-      <!--<script type="text/javascript" src="/assets/crossroads.min.js"></script>
-      <script type="text/javascript" src="/assets/hasher.min.js"></script>
-      <script type="text/javascript" src="/assets/galleries/jquery.isotope.min.js"></script>
-      <script type="text/javascript" src="/assets/galleries/jquery.prettyPhoto.js"></script>
-      <script type="text/javascript" src="/assets/galleries/twitter-bootstrap-hover-dropdown.js"></script>
 
-      <script type="text/javascript" src="/assets/slider/jquery.themepunch.plugins.min.js"></script>
-      <script type="text/javascript" src="/assets/slider/jquery.themepunch.revolution.min.js"></script>
-      <script type="text/javascript" src="/assets/slider/main.js"></script>-->
       <%#= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false" %>
       <!--<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&coordorder=longlat&lang=ru-RU" type="text/javascript"></script>-->
 
@@ -208,13 +192,12 @@
     var price = "<%= t 'price_btn' %>";
     var price_hide = "<%= t 'price_btn_hide' %>";
     $('.hide_data_btn').click(function(){
-      if($(this).html()==price){
+      if($(this).html() == price){
         $(this).html(price_hide);
       }
       else{
         $(this).html(price);
       }
-      $(this).toggleClass('up-arrow');
       $("div#"+this.id).slideToggle("slow");
     });
   });

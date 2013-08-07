@@ -24,7 +24,8 @@
                                                                                               :category_id => category.id } %>
                 </div>
                 <p>
-                  <a href="javascript: void(0)" id='for_service<%= service.id %>' class='hide_data_btn lux_btn2'><%= t 'price_btn' %></a>
+                  <%= link_to t('price_btn'), "javascript: void(0)", :id => "for_service#{service.id}",
+                                                                                                 :class => 'hide_data_btn lux_btn2' %>
                 </p>
               </div>
             <% end %>
