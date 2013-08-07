@@ -11,8 +11,6 @@ gem 'carrierwave'
 gem 'devise'
 gem 'activeadmin'
 gem 'meta-tags', :require => 'meta_tags'
-gem 'garb'
-gem "bullet", :group => "development"
 
 # Gems used only for assets and not required
 # in production environments by default.
